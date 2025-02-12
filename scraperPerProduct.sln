@@ -33,7 +33,7 @@ namespace EudamedAutomation
             {
                 // Open the webpage
                 Console.WriteLine("Navigating to the Eudamed website...");
-                driver.Navigate().GoToUrl("https://ec.europa.eu/tools/eudamed/#/screen/certificates?entityTypeCode=certificate.certificates&versionHistory=true&submitted=true");
+                driver.Navigate().GoToUrl("https://ec.europa.eu/tools/eudamed/#/screen/search-device?submitted=true");
 
                 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
