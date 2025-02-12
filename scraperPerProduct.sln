@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading;
 using ClosedXML.Excel;
 using SeleniumExtras.WaitHelpers;
+using OpenQA.Selenium.Chrome;
 
 namespace EudamedAutomation
 {
@@ -15,18 +16,24 @@ namespace EudamedAutomation
         static void Main(string[] args)
         {
             // Initialize WebDriver
-            var options = new EdgeOptions();
-            options.AddArgument("start-maximized"); // Optional to maximize the window
-            IWebDriver driver = new EdgeDriver(options);
+            var options = new ChromeOptions();
+            options.AddArgument("start-maximized"); // Maximizes the browser window
+            options.AddArguments("--no-sandbox");
+            options.AddArguments("--disable-dev-shm-usage");
+            options.AddArguments("--remote-debugging-port=9222");
+            options.AddArguments("--disable-gpu");
+            options.AddArguments("--window-size=1920,1080");
 
-            Console.WriteLine("Initializing the WebDriver and maximizing the browser window...");
+            IWebDriver driver = new ChromeDriver(options);
+
+            Console.WriteLine("Initializing Chrome WebDriver and maximizing the browser window...");
             int totalPages = 22222; // Total number of pages
-            
+
             try
             {
                 // Open the webpage
                 Console.WriteLine("Navigating to the Eudamed website...");
-                driver.Navigate().GoToUrl("https://ec.europa.eu/tools/eudamed/#/screen/search-device?deviceStatusCode=refdata.device-model-status.on-the-market&submitted=true");
+                driver.Navigate().GoToUrl("https://ec.europa.eu/tools/eudamed/#/screen/certificates?entityTypeCode=certificate.certificates&versionHistory=true&submitted=true");
 
                 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
@@ -49,7 +56,7 @@ namespace EudamedAutomation
                 dropdownOption.Click();
 
                 // Wait for the page to load with 50 items
-                
+
                 Console.WriteLine("Waiting for the page to load with 50 items per page...");
                 wait.Until(d =>
                 {
@@ -167,7 +174,7 @@ namespace EudamedAutomation
                         // Wait for the detail page to load
                         // Console.WriteLine("Waiting for the detail page to load...");
                         // wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.ecl-container")));
-                        // Console.WriteLine("Div with class 'ecl-container' has loaded.");
+                        // Console.WritseLine("Div with class 'ecl-container' has loaded.");
 
                         // WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
                         var accordionElements = wait.Until(d => d.FindElements(By.XPath("//div[@class='mb-5']")));
@@ -896,14 +903,14 @@ namespace EudamedAutomation
                         worksheet.Cell(excelRowIndex, 50).Value = versionText4;
                         worksheet.Cell(excelRowIndex, 51).Value = lastUpdateText4;
                         worksheet.Cell(excelRowIndex, 52).Value = memberStateAvailab;
-                                       
+
                         worksheet.Cell(excelRowIndex, 1).Value = udiDi;
 
 
                         Console.WriteLine($"*****************************************************************Datasaved in row {excelRowIndex}");
                         excelRowIndex++;
 
-                     
+
 
                         // Go back to the previous page
                         Console.WriteLine("Navigating back to the previous page...");
@@ -925,7 +932,7 @@ namespace EudamedAutomation
                     // Wait until table rows are visible
                     wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("table tbody tr")));
                 }
-                
+
 
             }
 
@@ -941,8 +948,8 @@ namespace EudamedAutomation
             // Hold the application open until manually closed
             Console.WriteLine("Press Enter to exit the application.");
             Console.ReadLine();
-            
-            
+
+
         }
         // Navigate to the next page
         public static void NavigateToNextPage(EdgeDriver driver, int currentPage)
@@ -968,5 +975,5 @@ namespace EudamedAutomation
         }
     }
 
-    
+
 }
