@@ -137,6 +137,7 @@ namespace EudamedAutomation
                 //UDI - DI details
                 worksheet.Cell(1, 38).Value = "Version";
                 worksheet.Cell(1, 39).Value = "Last update date";
+            
                 worksheet.Cell(1, 40).Value = "UDI-DI code / Issuing entity";
                 worksheet.Cell(1, 41).Value = "Status";
                 worksheet.Cell(1, 42).Value = "UDI-DI from another entity (secondary)";
@@ -169,7 +170,9 @@ namespace EudamedAutomation
                 worksheet.Cell(1, 67).Value = "SS(C)P Reference number";
                 worksheet.Cell(1, 68).Value = "SS(C)P revision number";
                 worksheet.Cell(1, 69).Value = "Issue date";
-                
+                //Certificate
+                worksheet.Cell(1, 70).Value = "Certificates numbers";
+
                 //int rowNum = 2;
 
                 // Start iterating over the rows of the table
@@ -1160,7 +1163,7 @@ namespace EudamedAutomation
                                 //// Extract the "Issue date"
                                 //
 
-                                string issueDateElement = "//dt[text()='SS(C)P revision number']/following-sibling::dd/div";
+                                string issueDateElement = "//dt[text()='Issue date']/following-sibling::dd/div";
                                 string issueDateText = "";
 
                                 try
@@ -1173,6 +1176,39 @@ namespace EudamedAutomation
                                     Console.WriteLine("SS(C)P revision number not found. Leaving it empty.");
                                 }
                                 Console.WriteLine("SS(C)P revision number: " + issueDateText);
+
+                                //
+                                //// Extract the "Certificates numbers"
+                                //
+
+
+                                // XPath for the certificate headers
+                                string certificateNoElement = "//h2[text()='Certificates']/following-sibling::div[1]//mat-expansion-panel-header";
+                                string certificateNoText = "";
+
+                                try
+                                {
+                                    // Find all matching elements
+                                    var certificateElements = driver.FindElements(By.XPath(certificateNoElement));
+
+                                    if (certificateElements.Count > 0)
+                                    {
+                                        // Extract text from each element and concatenate with a '%' sign
+                                        certificateNoText = string.Join("  %  ", certificateElements.Select(el => el.Text)) + "%";
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Certificates numbers not found. Leaving it empty.");
+                                    }
+                                }
+                                catch (NoSuchElementException)
+                                {
+                                    Console.WriteLine("Certificates numbers not found. Leaving it empty.");
+                                }
+
+                                // Print the final output
+                                Console.WriteLine("Certificates numbers: " + certificateNoText);
+
 
 
                                 //// Save extracted data to Excel
@@ -1209,8 +1245,8 @@ namespace EudamedAutomation
                                 worksheet.Cell(excelRowIndex, 27).Value = patSelfTestText;
                                 worksheet.Cell(excelRowIndex, 28).Value = profTestText;
                                 worksheet.Cell(excelRowIndex, 29).Value = reagentText;
-                                worksheet.Cell(excelRowIndex, 30).Value = udiText_basic;
-                                worksheet.Cell(excelRowIndex, 31).Value = udiText_basic;
+                                worksheet.Cell(excelRowIndex, 30).Value = InstrumentText;
+                                worksheet.Cell(excelRowIndex, 31).Value = deviceModelText;
                                 worksheet.Cell(excelRowIndex, 32).Value = deviceName;
                                 //
                                 ////Tissues and cells
@@ -1262,6 +1298,7 @@ namespace EudamedAutomation
                                 worksheet.Cell(excelRowIndex, 67).Value = refNoText;
                                 worksheet.Cell(excelRowIndex, 68).Value = revNoText;
                                 worksheet.Cell(excelRowIndex, 69).Value = issueDateText;
+                                worksheet.Cell(excelRowIndex, 70).Value = certificateNoText;
 
                                 worksheet.Cell(excelRowIndex, 1).Value = udiDi;
 
