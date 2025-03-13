@@ -8,7 +8,7 @@ using System.Threading;
 using ClosedXML.Excel;
 using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium.Chrome;
-using System.Diagnostics.Metrics;
+
 using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Spreadsheet;
 
@@ -86,8 +86,71 @@ namespace EudamedAutomation
                 Console.WriteLine("Waiting for the table to stabilize...");
                 Thread.Sleep(5000); // Adjust the sleep time as needed based on the page load time
 
-                // Create an Excel file to store data
-                Console.WriteLine("Creating an Excel workbook to store the extracted data...");
+                // Define the sequence of pages to click
+                int[] pagesToVisit = { 5, 7, 9, 11, 13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151}; // Last page is 12 (can be changed)
+
+              
+                    foreach (int page in pagesToVisit)
+                    {
+                        
+
+                        do
+                        {
+                            try
+                            {
+                                string pageXPath = $"//button[contains(@aria-label, 'Page number {page} ')]";
+                                Console.WriteLine($"\nNavigating to Page {page}...");
+
+                                IWebElement pageButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(pageXPath)));
+                                js.ExecuteScript("arguments[0].scrollIntoView(true);", pageButton);
+                                pageButton.Click();
+
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine($"✅ Successfully navigated to Page {page}");
+                                Console.ResetColor();
+
+                                Thread.Sleep(3000);
+                            }
+                            catch (NoSuchElementException ex)
+                            {
+                                Console.WriteLine($"An error occurred: {ex.Message}");
+
+                                // Prompt user for action
+                                Console.WriteLine("Choose an option:");
+                                Console.WriteLine("[R] Retry this iteration");
+                                Console.WriteLine("[S] Skip to next page");
+                                Console.WriteLine("[E] Exit program");
+
+                                string userChoice = Console.ReadLine()?.ToUpper();
+                                switch (userChoice)
+                                {
+                                    case "R":
+                                        retryIteration = true; // Repeat this iteration
+                                        Console.WriteLine("Retrying...");
+                                        break;
+                                    case "S":
+                                        Console.WriteLine("Skipping to the next page...");
+                                        retryIteration = false; // Moves to next iteration
+                                        break;
+                                    case "E":
+                                        Console.WriteLine("Exiting program...");
+                                        driver.Quit();
+                                        return; // Exit function
+                                    default:
+                                        Console.WriteLine("Invalid choice. Skipping iteration.");
+                                        retryIteration = false;
+                                        break;
+                                }
+                            }
+                        } while (retryIteration);
+                    }
+             
+
+            
+
+
+        // Create an Excel file to store data
+        Console.WriteLine("Creating an Excel workbook to store the extracted data...");
                 var workbook = new XLWorkbook();
                 var worksheet = workbook.AddWorksheet("Device Data");
 
@@ -137,7 +200,7 @@ namespace EudamedAutomation
                 //UDI - DI details
                 worksheet.Cell(1, 38).Value = "Version";
                 worksheet.Cell(1, 39).Value = "Last update date";
-            
+
                 worksheet.Cell(1, 40).Value = "UDI-DI code / Issuing entity";
                 worksheet.Cell(1, 41).Value = "Status";
                 worksheet.Cell(1, 42).Value = "UDI-DI from another entity (secondary)";
@@ -179,10 +242,10 @@ namespace EudamedAutomation
                 Console.WriteLine("Starting to iterate over the table rows...");
                 int excelRowIndex = 2;
 
-                
-                for (int currentPage = 1; currentPage <= totalPages; currentPage++)
+
+                for (int currentPage = 151; currentPage <= totalPages; currentPage++)
                 {
-                   
+
                     var tableRows = driver.FindElements(By.CssSelector("table tbody tr"));
                     for (int i = 0; i < tableRows.Count; i++)
                         do
@@ -544,7 +607,7 @@ namespace EudamedAutomation
 
                                 ////Patient self testing
                                 ///
-                               
+
 
                                 string patSelfTestElement = "//dt[contains(text(), 'Patient self testing')]/following-sibling::dd/div";
                                 string patSelfTestText = "";
@@ -636,7 +699,7 @@ namespace EudamedAutomation
                                 Console.WriteLine("Device model: " + deviceModelText);
 
 
-                             
+
 
 
 
@@ -1184,17 +1247,22 @@ namespace EudamedAutomation
 
                                 // XPath for the certificate headers
                                 string certificateNoElement = "//h2[text()='Certificates']/following-sibling::div[1]//mat-expansion-panel-header";
+                                string certificateNoElement2 = "//h2[text()='Certificates']/following-sibling::div[1]//mat-expansion-panel/div/div/div";
                                 string certificateNoText = "";
 
                                 try
                                 {
                                     // Find all matching elements
                                     var certificateElements = driver.FindElements(By.XPath(certificateNoElement));
+                                    var certificateElements2 = driver.FindElements(By.XPath(certificateNoElement2));
 
-                                    if (certificateElements.Count > 0)
+                                    if (certificateElements.Count > 0 || certificateElements2.Count > 0)
                                     {
-                                        // Extract text from each element and concatenate with a '%' sign
-                                        certificateNoText = string.Join("  %  ", certificateElements.Select(el => el.Text)) + "%";
+                                        // Extract text from both sets of elements and concatenate them with " % "
+                                        var certificateTexts = certificateElements.Select(el => el.Text)
+                                                                .Concat(certificateElements2.Select(el => el.Text));
+
+                                        certificateNoText = string.Join("  %  ", certificateTexts) + " % ";
                                     }
                                     else
                                     {
@@ -1205,6 +1273,7 @@ namespace EudamedAutomation
                                 {
                                     Console.WriteLine("Certificates numbers not found. Leaving it empty.");
                                 }
+
 
                                 // Print the final output
                                 Console.WriteLine("Certificates numbers: " + certificateNoText);
@@ -1314,9 +1383,9 @@ namespace EudamedAutomation
 
                                 // Save the Excel file
                                 Console.WriteLine("Saving the extracted data to an Excel file...");
-                                workbook.SaveAs("Eudamed_Device_Data5.xlsx");
+                                workbook.SaveAs("Eudamed_Device_Data2.xlsx");
 
-                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data5.xlsx'.");
+                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data2.xlsx'.");
 
 
                                 // Wait for the table to reload
@@ -1395,7 +1464,7 @@ namespace EudamedAutomation
                         break; // Moves to next iteration
                     case "E":
                         Console.WriteLine("Exiting program...");
-                        driver.Quit();
+                        
 
                         return; // Exit function
                     default:
@@ -1403,22 +1472,7 @@ namespace EudamedAutomation
                         break;
                 }
             }
-            finally
-            {
-                Console.WriteLine("Press 'E' to exit and close the browser, or any other key to keep it open...");
-                string userInput = Console.ReadLine();
-
-                if (userInput?.Trim().ToUpper() == "E")
-                {
-                    driver.Quit();
-                    
-                    Console.WriteLine("Browser closed.");
-                }
-                else
-                {
-                    Console.WriteLine("Browser will remain open.");
-                }
-            }
+            
 
             // Hold the application open until manually closed
             Console.WriteLine("Press Enter to exit the application.");
@@ -1448,7 +1502,20 @@ namespace EudamedAutomation
 
             Console.WriteLine($"Page {currentPage + 1} loaded.");
         }
+        static void ClickPage(IWebDriver driver, int pageNumber)
+        {
+            try
+            {
+                IWebElement pageButton = driver.FindElement(By.XPath($"//button[contains(@aria-label, 'Page number {pageNumber}')]"));
+                pageButton.Click();
+                Console.WriteLine($"Navigated to Page {pageNumber}");
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine($"Page {pageNumber} button not found!");
+            }
+        }
     }
-
-
 }
+
+
