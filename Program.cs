@@ -1383,9 +1383,9 @@ namespace EudamedAutomation
 
                                 // Save the Excel file
                                 Console.WriteLine("Saving the extracted data to an Excel file...");
-                                workbook.SaveAs("Eudamed_Device_Data2.xlsx");
+                                workbook.SaveAs("Eudamed_Device_Data3_151.xlsx");
 
-                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data2.xlsx'.");
+                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data3_151.xlsx'.");
 
 
                                 // Wait for the table to reload
