@@ -1236,9 +1236,9 @@ namespace EudamedAutomation
                                 catch (NoSuchElementException)
                                 {
                                     // If the element is not found, leave versionText4 as empty
-                                    Console.WriteLine("SS(C)P revision number not found. Leaving it empty.");
+                                    Console.WriteLine("SS(C)P issue date not found. Leaving it empty.");
                                 }
-                                Console.WriteLine("SS(C)P revision number: " + issueDateText);
+                                Console.WriteLine("SS(C)P issue date: " + issueDateText);
 
                                 //
                                 //// Extract the "Certificates numbers"
