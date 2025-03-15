@@ -96,7 +96,7 @@ namespace EudamedAutomation
                                         291, 293, 295, 297, 299, 301, 303, 305, 307, 309, 311, 313, 315, 317, 319, 321, 323, 325, 327, 
                                             329, 331, 333, 335, 337, 339, 341, 343, 345, 347, 349, 351, 353, 355, 357, 359, 361, 363, 
                                                 365, 367, 369, 371, 373, 375, 377, 379, 381, 383, 385, 387, 389, 391, 393, 395, 397, 399, 
-                                            401, 403, 405, 407, 409, 411, 412 }; // Last page is 12 (can be changed)
+                                            401, 403, 405, 407, 409, 411, 413, 415, 417, 419, 421, 423, 425, 427, 429, 431, 433, 435, 437, 439, 441, 443, 445, 447, 448 }; // Last page is 12 (can be changed)
 
               
                     foreach (int page in pagesToVisit)
@@ -252,7 +252,7 @@ namespace EudamedAutomation
                 int excelRowIndex = 2;
 
 
-                for (int currentPage = 412; currentPage <= totalPages; currentPage++)
+                for (int currentPage = 448; currentPage <= totalPages; currentPage++)
                 {
 
                     var tableRows = driver.FindElements(By.CssSelector("table tbody tr"));
@@ -1392,9 +1392,9 @@ namespace EudamedAutomation
 
                                 // Save the Excel file
                                 Console.WriteLine("Saving the extracted data to an Excel file...");
-                                workbook.SaveAs("Eudamed_Device_Data_413.xlsx");
+                                workbook.SaveAs("Eudamed_Device_Data_449.xlsx");
 
-                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data_413.xlsx'.");
+                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data_449.xlsx'.");
 
 
                                 // Wait for the table to reload
