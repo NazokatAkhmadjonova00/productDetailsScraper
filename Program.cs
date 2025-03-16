@@ -96,7 +96,9 @@ namespace EudamedAutomation
                                         291, 293, 295, 297, 299, 301, 303, 305, 307, 309, 311, 313, 315, 317, 319, 321, 323, 325, 327, 
                                             329, 331, 333, 335, 337, 339, 341, 343, 345, 347, 349, 351, 353, 355, 357, 359, 361, 363, 
                                                 365, 367, 369, 371, 373, 375, 377, 379, 381, 383, 385, 387, 389, 391, 393, 395, 397, 399, 
-                                            401, 403, 405, 407, 409, 411, 413, 415, 417, 419, 421, 423, 425, 427, 429, 431, 433, 435, 437, 439, 441, 443, 445, 447, 449, 451, 453, 455, 457, 459 }; // Last page is 12 (can be changed)
+                                            401, 403, 405, 407, 409, 411, 413, 415, 417, 419, 421, 423, 425, 427, 429, 431, 433, 435, 437,
+                                                439, 441, 443, 445, 447, 449, 451, 453, 455, 457,459, 461, 463, 465, 467, 469, 471, 473, 475, 
+                                                    477, 479, 481, 483, 485, 487, 489, 491, 493 }; // Last page is 12 (can be changed)
 
               
                     foreach (int page in pagesToVisit)
@@ -252,7 +254,7 @@ namespace EudamedAutomation
                 int excelRowIndex = 2;
 
 
-                for (int currentPage = 459; currentPage <= totalPages; currentPage++)
+                for (int currentPage = 493; currentPage <= totalPages; currentPage++)
                 {
 
                     var tableRows = driver.FindElements(By.CssSelector("table tbody tr"));
@@ -1392,9 +1394,9 @@ namespace EudamedAutomation
 
                                 // Save the Excel file
                                 Console.WriteLine("Saving the extracted data to an Excel file...");
-                                workbook.SaveAs("Eudamed_Device_Data_460.xlsx");
+                                workbook.SaveAs("Eudamed_Device_Data_494.xlsx");
 
-                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data_460.xlsx'.");
+                                Console.WriteLine($"Data extraction for a product No {i + 1}! Excel file saved as 'Eudamed_Device_Data_494.xlsx'.");
 
 
                                 // Wait for the table to reload
