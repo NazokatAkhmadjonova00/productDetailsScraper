@@ -153,6 +153,7 @@ class DeviceImporter:
 
         try:
             # === INSERT INTO device_basic_udi_detail ===
+            basic_uuid = basicUdiData.get("uuid")
 
             legislation_list = basicUdiData.get("applicableLegislation", [])
             legislation = legislation_list[0].get("code", "") if legislation_list and isinstance(legislation_list[0], dict) else ""
@@ -181,6 +182,7 @@ class DeviceImporter:
             insert_basic_query = """
                 INSERT INTO device_basic_udi_detail (
                     device_uuid,
+                    basic_uuid,
                     eudamed_id,
                     applicable_legislation,
                     procedure_pack_device_itself,
@@ -199,12 +201,13 @@ class DeviceImporter:
                     contains_medicinal_substance,
                     contains_blood_derived_medicinal_substance
                 ) VALUES (
-                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
                 );
             """
 
             self.db.execute(insert_basic_query, (
                 uuid,
+                basic_uuid,
                 eudamed_id,
                 legislation,
                 procedure_pack_device_itself,
@@ -226,6 +229,7 @@ class DeviceImporter:
 
 
             # === INSERT INTO device_udi_di_details ===
+            udi_uuid = udiDiData.get("uuid")
             
             # Handle nested device status safely
             device_status = udiDiData.get("deviceStatus")
@@ -336,6 +340,7 @@ class DeviceImporter:
             insert_detail_query = """
                 INSERT INTO device_udi_di_details (
                     device_uuid,
+                    udi_uuid,
                     eudamed_id,
                     status,
                     udi_di_secondary,
@@ -358,11 +363,12 @@ class DeviceImporter:
                     market_member_state,
                     related_devices
                 ) VALUES (
-                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
             """
 
             self.db.execute(insert_detail_query, (
-                uuid, 
+                uuid,
+                udi_uuid, 
                 eudamed_id,
                 status,
                 udi_di_secondary,

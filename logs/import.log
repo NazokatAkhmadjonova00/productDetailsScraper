@@ -143,3 +143,325 @@ DETAIL:  Key (uuid)=(2e68d9df-dbfc-41cf-af5b-ad07337feb01) already exists.
 2025-08-06 13:29:18,612 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
 2025-08-06 13:29:18,612 - ERROR - Error checking device existence for b1a9aa5d-5e40-4ffa-b241-9065dbfc2e70: no results to fetch
 2025-08-06 13:29:37,324 - ERROR - Error checking device existence for 3462b15b-c7a1-4a05-ae55-248492511170: no results to fetch
+2025-08-06 13:30:04,608 - ERROR - Error checking device existence for cdfc1881-f8ed-4f86-8d69-66454a708f02: no results to fetch
+2025-08-06 13:30:08,076 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:30:10,145 - ERROR - Error checking device existence for b538bb67-f440-4c1a-a8a6-bc8e182e0a9f: no results to fetch
+2025-08-06 13:30:20,070 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:30:22,664 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:30:29,160 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:30:35,963 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:30:35,965 - ERROR - Error checking device existence for 4acbadc3-4d53-4f93-bb02-189707d98de8: no results to fetch
+2025-08-06 13:30:36,714 - ERROR - Error checking device existence for a39fdaf7-a200-415a-8673-dbc87b53b091: no results to fetch
+2025-08-06 13:30:37,257 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:30:39,818 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:01,253 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:01,258 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:01,260 - ERROR - Error checking device existence for b2f6b0b9-812f-4f16-94b3-ae8a21469745: current transaction is aborted, commands ignored until end of transaction block
+
+2025-08-06 13:31:01,260 - ERROR - SQL-ERROR:
+duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(b8a0a67a-d339-4f38-b9c7-2e99bcdf12da) already exists.
+
+\u21b3 Query: 
+            INSERT INTO operators (
+                uuid,
+                actor_id,
+                version,
+                role,
+                name,
+                abbreviated_name,
+                city_name,
+                country,
+                details_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        
+\u21b3 Params: ('b8a0a67a-d339-4f38-b9c7-2e99bcdf12da', 'FR-MF-000001820', 2, 'Manufacturer', 'EUROSPINE SARL', 'EUROSPINE SARL', "L'HAY LES ROSES", 'France', None)
+2025-08-06 13:31:01,260 - ERROR - Error processing actor data for FR-MF-000001820: duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(b8a0a67a-d339-4f38-b9c7-2e99bcdf12da) already exists.
+
+2025-08-06 13:31:04,438 - ERROR - Error checking device existence for 419f3caa-edb5-43a6-8a90-c036ac967e7d: no results to fetch
+2025-08-06 13:31:08,017 - ERROR - Error checking device existence for 28f7ae47-dfaa-4b3e-87f4-b5cefd05cf30: no results to fetch
+2025-08-06 13:31:29,756 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:31,770 - ERROR - Error checking device existence for bbd03cc1-b9cf-4a11-8c92-ea5e8199520e: no results to fetch
+2025-08-06 13:31:36,341 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:36,955 - ERROR - Error checking device existence for f47259a4-07b4-48ad-8d8f-0fefcbe13939: no results to fetch
+2025-08-06 13:31:36,959 - ERROR - Error checking device existence for 1b3411cc-2938-42aa-91d0-ab9efa3e3459: no results to fetch
+2025-08-06 13:31:37,548 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:40,638 - ERROR - Error checking device existence for 7f11c355-83b7-4092-85f5-5f95b65ad4aa: no results to fetch
+2025-08-06 13:31:41,865 - ERROR - Error checking device existence for 9b698f42-0d6b-4e3c-b149-a076488b6029: no results to fetch
+2025-08-06 13:31:42,414 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:43,022 - ERROR - Error checking device existence for 0a34b17d-99a0-4962-8577-a43cc271600a: no results to fetch
+2025-08-06 13:31:49,894 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:31:50,528 - ERROR - Error checking device existence for a1eb73be-8449-46e6-bcf9-8279c6204da8: no results to fetch
+2025-08-06 13:32:01,090 - ERROR - Error checking device existence for c6e42b10-43d6-4b47-bf7c-476e0ba2b3b8: no results to fetch
+2025-08-06 13:32:32,296 - ERROR - Error checking device existence for 85cfd862-6c57-4558-99bf-0ee5e27ef2d7: no results to fetch
+2025-08-06 13:32:32,300 - ERROR - Error processing actor data for US-MF-000017245: no results to fetch
+2025-08-06 13:32:32,302 - ERROR - Error checking device existence for 682a12f0-5635-4740-8968-bf893d32e5cc: no results to fetch
+2025-08-06 13:33:05,556 - ERROR - Error processing actor data for AT-MF-000001590: no results to fetch
+2025-08-06 13:33:05,558 - ERROR - Error checking device existence for 1459f338-d925-4405-8dd9-1525eb9cf6e0: no results to fetch
+2025-08-06 13:33:06,950 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:33:06,952 - ERROR - Error checking device existence for 47bf68fa-4b3c-4e83-964d-1558a365b4f9: no results to fetch
+2025-08-06 13:33:06,961 - ERROR - Error checking device existence for 7656bd47-8cf0-49ef-a79b-e75006bf1363: no results to fetch
+2025-08-06 13:33:08,206 - ERROR - Error checking device existence for da13da36-e920-4f80-b384-0d122b3464bb: no results to fetch
+2025-08-06 13:33:10,266 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:33:12,751 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:33:13,359 - ERROR - Error checking device existence for 6a0c401b-058e-448e-8833-467be3c77eed: no results to fetch
+2025-08-06 13:33:29,565 - ERROR - Error checking device existence for 1486a07e-a75c-4dc5-b19f-d8808ea96d92: no results to fetch
+2025-08-06 13:33:33,091 - ERROR - Error checking device existence for caf9c37d-eaab-4f8d-94ef-56b0b90e505d: no results to fetch
+2025-08-06 13:33:33,092 - ERROR - Error checking device existence for 7f6c546f-8703-4ad3-ad78-fed3312c900e: no results to fetch
+2025-08-06 13:33:34,716 - ERROR - Error checking device existence for b5ec7939-78bc-423e-8479-b648e80c88e7: no results to fetch
+2025-08-06 13:33:35,947 - ERROR - Error checking device existence for 9dac7c17-b38a-4526-8b32-6c4196424d7f: no results to fetch
+2025-08-06 13:33:42,182 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:33:44,657 - ERROR - Error checking device existence for fcb33b6f-2ad2-466b-829c-c3d16143f2be: no results to fetch
+2025-08-06 13:33:59,121 - ERROR - Error checking device existence for 5f74fc45-0771-4afe-82d4-e02a4abd72df: no results to fetch
+2025-08-06 13:34:01,041 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:34:03,784 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:34:04,468 - ERROR - Error checking device existence for f24d3b89-d180-408b-871a-1c82e247955d: no results to fetch
+2025-08-06 13:34:06,237 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:34:25,847 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:34:36,352 - ERROR - Error checking device existence for 96353daa-ad2a-46b6-86e0-4c5b2b8db58d: no results to fetch
+2025-08-06 13:34:54,577 - ERROR - Error checking device existence for f74f7a25-c526-47e8-94eb-cdb9a5ad4d9a: no results to fetch
+2025-08-06 13:34:55,136 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:35:07,452 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:35:15,239 - ERROR - Error checking device existence for a431b0ca-6a1a-42b7-96f5-cf1f11c721ee: no results to fetch
+2025-08-06 13:35:15,922 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:35:17,776 - ERROR - Error checking device existence for ddee4a69-3240-4361-8e5f-324016a56d5d: no results to fetch
+2025-08-06 13:35:28,177 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:35:28,178 - ERROR - Error checking device existence for 736ca4e4-7368-429e-9f9e-552d7c5171e9: no results to fetch
+2025-08-06 13:35:40,690 - ERROR - Error checking device existence for ca16fa41-be98-4bee-9c45-0e3b972cfb70: no results to fetch
+2025-08-06 13:35:46,002 - ERROR - Error checking device existence for 675568d0-4355-4753-ad99-c44c758e0525: no results to fetch
+2025-08-06 13:35:47,234 - ERROR - Error checking device existence for 9ae551fb-064e-4333-95c5-432b730568c6: no results to fetch
+2025-08-06 13:35:47,816 - ERROR - SQL-ERROR:
+duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(8791918d-e11a-4d4a-b2be-b2dd6b1f7548) already exists.
+
+\u21b3 Query: 
+            INSERT INTO operators (
+                uuid,
+                actor_id,
+                version,
+                role,
+                name,
+                abbreviated_name,
+                city_name,
+                country,
+                details_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        
+\u21b3 Params: ('8791918d-e11a-4d4a-b2be-b2dd6b1f7548', 'DE-MF-000005906', 7, 'Manufacturer', 'VITA Zahnfabrik', 'VITA', 'Bad Säckingen', 'Germany', None)
+2025-08-06 13:35:47,818 - ERROR - Error processing actor data for DE-MF-000005906: duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(8791918d-e11a-4d4a-b2be-b2dd6b1f7548) already exists.
+
+2025-08-06 13:35:48,468 - ERROR - Error checking device existence for 50fdc305-f296-4609-81e9-bb2b304d10ac: no results to fetch
+2025-08-06 13:35:51,035 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:35:51,039 - ERROR - Error checking device existence for 77285ed7-9555-45c9-b22e-985aabeb67b3: no results to fetch
+2025-08-06 13:36:10,299 - ERROR - SQL-ERROR:
+duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(8791918d-e11a-4d4a-b2be-b2dd6b1f7548) already exists.
+
+\u21b3 Query: 
+            INSERT INTO operators (
+                uuid,
+                actor_id,
+                version,
+                role,
+                name,
+                abbreviated_name,
+                city_name,
+                country,
+                details_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        
+\u21b3 Params: ('8791918d-e11a-4d4a-b2be-b2dd6b1f7548', 'DE-MF-000005906', 7, 'Manufacturer', 'VITA Zahnfabrik', 'VITA', 'Bad Säckingen', 'Germany', None)
+2025-08-06 13:36:10,299 - ERROR - Error processing actor data for DE-MF-000005906: duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(8791918d-e11a-4d4a-b2be-b2dd6b1f7548) already exists.
+
+2025-08-06 13:36:14,688 - ERROR - Error checking device existence for 8b743745-0bf1-43a2-862f-ab5ba030cbd1: no results to fetch
+2025-08-06 13:36:14,688 - ERROR - Error checking device existence for cb29bf78-5e38-4656-80dd-6468e59eb774: no results to fetch
+2025-08-06 13:36:20,171 - ERROR - Error checking device existence for 32605c00-952c-4556-8a9b-1fc23449a0d6: no results to fetch
+2025-08-06 13:36:20,742 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:36:21,449 - ERROR - Error checking device existence for c45919d2-8286-46cd-8ab4-60920015bf59: no results to fetch
+2025-08-06 13:36:32,370 - ERROR - Error checking device existence for 3373562b-ce4b-4664-bcbb-ba9c5a5c9632: no results to fetch
+2025-08-06 13:36:33,061 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:36:33,061 - ERROR - Error checking device existence for cf16807f-811b-4b11-b457-9e5778043df4: no results to fetch
+2025-08-06 13:36:33,940 - ERROR - Error checking device existence for 90bc0486-9208-4c23-bb52-b2dc836e36b5: no results to fetch
+2025-08-06 13:36:34,528 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:36:34,530 - ERROR - Error checking device existence for 4296e6ec-d439-4ccf-8f0f-183b71e469fe: no results to fetch
+2025-08-06 13:36:43,464 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:36:52,877 - ERROR - Error checking device existence for b68c1493-ad05-421d-ad4e-38aabb0944e3: no results to fetch
+2025-08-06 13:36:57,086 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:37:00,836 - ERROR - Error checking device existence for 6c954c36-f066-43ae-b086-b0a6c50600ec: no results to fetch
+2025-08-06 13:37:05,148 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:37:05,777 - ERROR - Error checking device existence for 60535c0b-d962-4c6d-b829-a46d15e17749: no results to fetch
+2025-08-06 13:37:23,422 - ERROR - Error checking device existence for 04edacee-0d3f-4a72-b46b-4ababbba6888: no results to fetch
+2025-08-06 13:37:41,290 - ERROR - Error checking device existence for 33aac331-4c8b-4ca3-bc0c-5ab38d09821a: no results to fetch
+2025-08-06 13:37:48,966 - ERROR - Error checking device existence for 997c5ab5-263f-4d6c-b890-501436a37f42: no results to fetch
+2025-08-06 13:38:01,324 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:38:01,324 - ERROR - Error checking device existence for abd651d5-4db8-4d92-8b5a-becc77534335: no results to fetch
+2025-08-06 13:38:05,063 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:38:13,014 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:38:22,672 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:38:22,678 - ERROR - Error checking device existence for 0f95b635-abd2-422c-9a31-1e2105fec920: no results to fetch
+2025-08-06 13:38:35,473 - ERROR - Error checking device existence for c0dfb312-add9-4ff9-9dd0-8dd6c7ab8c3f: no results to fetch
+2025-08-06 13:38:36,035 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:38:36,035 - ERROR - Error checking device existence for e7115af7-c9f0-4e9e-b190-6ef6a82cad30: no results to fetch
+2025-08-06 13:38:41,050 - ERROR - Error checking device existence for acb84770-d287-4492-8298-0e95add974b6: no results to fetch
+2025-08-06 13:38:44,351 - ERROR - Error checking device existence for a0995bfd-65ad-4f18-9236-cfc33531b779: no results to fetch
+2025-08-06 13:39:06,761 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:06,762 - ERROR - Error checking device existence for a73b1e40-035a-4777-91b8-cc182eab0655: no results to fetch
+2025-08-06 13:39:08,607 - ERROR - Error checking device existence for d478399e-8b3e-4b88-a002-0602358965d4: no results to fetch
+2025-08-06 13:39:18,608 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:18,609 - ERROR - Error checking device existence for 1d56c0e2-dcef-4595-b9b2-64cd61658ce5: no results to fetch
+2025-08-06 13:39:21,371 - ERROR - Error checking device existence for 78291195-9c59-4450-a527-13119bb3c84a: no results to fetch
+2025-08-06 13:39:32,081 - ERROR - Error checking device existence for 9962a342-a1c0-47e3-a8a9-0ab6506117a8: no results to fetch
+2025-08-06 13:39:42,983 - ERROR - Error checking device existence for 458fe395-2ae0-4d97-9fa7-b10eb80cf113: no results to fetch
+2025-08-06 13:39:42,983 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:42,983 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:42,987 - ERROR - Error checking device existence for 03300bec-d28a-4883-9ba6-39063e6bbe13: no results to fetch
+2025-08-06 13:39:42,987 - ERROR - Error checking device existence for 1b138663-0362-4247-8b7d-2f4dcc540f6e: no results to fetch
+2025-08-06 13:39:43,738 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:44,608 - ERROR - Error checking device existence for d53ddd5b-d6fd-4ce1-ad71-f04e35a47ed1: no results to fetch
+2025-08-06 13:39:45,225 - ERROR - Error checking device existence for b60d73fa-ef06-47ff-a6d0-5fc37cae7962: no results to fetch
+2025-08-06 13:39:45,226 - ERROR - SQL-ERROR:
+duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(8791918d-e11a-4d4a-b2be-b2dd6b1f7548) already exists.
+
+\u21b3 Query: 
+            INSERT INTO operators (
+                uuid,
+                actor_id,
+                version,
+                role,
+                name,
+                abbreviated_name,
+                city_name,
+                country,
+                details_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        
+\u21b3 Params: ('8791918d-e11a-4d4a-b2be-b2dd6b1f7548', 'DE-MF-000005906', 7, 'Manufacturer', 'VITA Zahnfabrik', 'VITA', 'Bad Säckingen', 'Germany', None)
+2025-08-06 13:39:45,226 - ERROR - SQL-ERROR:
+current transaction is aborted, commands ignored until end of transaction block
+
+\u21b3 Query: 
+        INSERT INTO devices (uuid) VALUES (%s)
+        ON CONFLICT (uuid) DO NOTHING;
+        
+\u21b3 Params: ('b60d73fa-ef06-47ff-a6d0-5fc37cae7962',)
+2025-08-06 13:39:45,226 - ERROR - Error processing actor data for DE-MF-000005906: duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(8791918d-e11a-4d4a-b2be-b2dd6b1f7548) already exists.
+
+2025-08-06 13:39:45,226 - ERROR - ERROR - DEVICE PAGE 144: current transaction is aborted, commands ignored until end of transaction block
+
+2025-08-06 13:39:46,044 - ERROR - Error checking device existence for d93c4399-0c59-4983-b909-bed8b8066515: no results to fetch
+2025-08-06 13:39:46,045 - ERROR - Error checking device existence for 5e1f0023-954b-4542-ab06-c4a89bfac45d: current transaction is aborted, commands ignored until end of transaction block
+
+2025-08-06 13:39:46,045 - ERROR - SQL-ERROR:
+insert or update on table "device_basic_udi_detail" violates foreign key constraint "device_basic_udi_detail_device_uuid_fkey"
+DETAIL:  Key (device_uuid)=(14d7baea-3c98-4c34-8af2-764feb683dcb) is not present in table "devices".
+
+\u21b3 Query: 
+                INSERT INTO device_basic_udi_detail (
+                    device_uuid,
+                    eudamed_id,
+                    applicable_legislation,
+                    procedure_pack_device_itself,
+                    authorised_representative,
+                    risk_class,
+                    implantable,
+                    is_suture_or_implant_part,
+                    measuring_function,
+                    reusable_surgical_instrument,
+                    active_device,
+                    intended_to_administer_or_remove_medicinal_product,
+                    device_model,
+                    device_name,
+                    contains_human_tissues,
+                    contains_animal_tissues,
+                    contains_medicinal_substance,
+                    contains_blood_derived_medicinal_substance
+                ) VALUES (
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                );
+            
+\u21b3 Params: ('14d7baea-3c98-4c34-8af2-764feb683dcb', 'J017C44431F40', '', False, None, 'class-iia', 'False', 'None', 'False', 'False', 'False', 'False', None, 'Veneering Polymers', 'False', 'False', 'False', 'None')
+2025-08-06 13:39:46,046 - ERROR - Error inserting device details (J017C44431F40): insert or update on table "device_basic_udi_detail" violates foreign key constraint "device_basic_udi_detail_device_uuid_fkey"
+DETAIL:  Key (device_uuid)=(14d7baea-3c98-4c34-8af2-764feb683dcb) is not present in table "devices".
+
+2025-08-06 13:39:46,656 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:46,656 - ERROR - Error checking device existence for 5253c1ff-696b-401f-b30f-37c1ae968a03: no results to fetch
+2025-08-06 13:39:47,529 - ERROR - Error checking device existence for 5253c1ff-696b-401f-b30f-37c1ae968a03: no results to fetch
+2025-08-06 13:39:47,529 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:47,533 - ERROR - Error checking device existence for cc48638c-f5d6-4e30-af02-86222f2a25a7: no results to fetch
+2025-08-06 13:39:50,451 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:50,451 - ERROR - Error checking device existence for 7e8db3bc-b977-4cbb-9072-02cce4ccca4c: no results to fetch
+2025-08-06 13:39:51,269 - ERROR - Error checking device existence for 4293ebbe-1071-485a-912b-fdcf580e8db1: no results to fetch
+2025-08-06 13:39:54,027 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:39:54,027 - ERROR - Error checking device existence for aa375dae-a198-41c7-8308-155c91c194af: no results to fetch
+2025-08-06 13:39:55,955 - ERROR - Error checking device existence for 7115c68c-bb51-43a6-976e-1e1ed5441fb9: no results to fetch
+2025-08-06 13:40:03,248 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:40:03,250 - ERROR - Error checking device existence for 97b09c2e-a12c-4d1c-97bb-dec1f888ecfd: no results to fetch
+2025-08-06 13:40:06,432 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:40:06,433 - ERROR - Error checking device existence for ca223aab-6a0b-4789-b390-54241ca7eef0: no results to fetch
+2025-08-06 13:40:17,591 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:40:17,592 - ERROR - Error checking device existence for 28200db7-b229-4ed6-9558-f73d07799254: no results to fetch
+2025-08-06 13:40:18,236 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:40:18,239 - ERROR - Error checking device existence for 1cd0f78f-bb3d-4ed5-96d0-4ad3113f5cfa: no results to fetch
+2025-08-06 13:40:39,231 - ERROR - Error checking device existence for a1771e36-671a-49c5-bd52-df7b5658e9e6: no results to fetch
+2025-08-06 13:40:52,004 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:41:01,782 - ERROR - Error checking device existence for 5c61db54-a79e-44e5-a066-74395af68dd7: no results to fetch
+2025-08-06 13:41:03,285 - ERROR - Error checking device existence for 14994108-f1d5-4e6a-8a53-5b604a8d4b02: no results to fetch
+2025-08-06 13:41:04,203 - ERROR - Error checking device existence for e3d9a570-f615-4be4-8531-188571c2aef9: no results to fetch
+2025-08-06 13:41:06,646 - ERROR - Error checking device existence for 4298e17e-a3ad-49fe-895d-2d5f2883d28c: no results to fetch
+2025-08-06 13:41:06,765 - ERROR - Error checking device existence for b1651739-48b3-46ac-a94e-3485102938f1: no results to fetch
+2025-08-06 13:41:13,644 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:41:16,063 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:41:16,721 - ERROR - Error checking device existence for 12d9dd0b-9690-4759-8dea-cd239c45beaa: no results to fetch
+2025-08-06 13:41:21,563 - ERROR - Error checking device existence for cd6c006e-9a8d-4282-b75b-c4e43afe1c19: no results to fetch
+2025-08-06 13:41:28,637 - ERROR - Error checking device existence for a0fa811b-39c0-4e84-8839-7ee544d6bfa5: no results to fetch
+2025-08-06 13:41:42,582 - ERROR - Error checking device existence for 0952ff9d-0674-488d-b5b0-39f7becddbed: no results to fetch
+2025-08-06 13:41:43,138 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:41:46,788 - ERROR - Error checking device existence for de537abb-c0f3-470f-929c-a4a45372c96b: no results to fetch
+2025-08-06 13:41:48,646 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:41:48,651 - ERROR - Error checking device existence for 2b77851b-0226-4f8a-9232-88c3c9b86509: no results to fetch
+2025-08-06 13:41:48,651 - ERROR - Error checking device existence for 3f7c2b18-903f-40a3-ac8c-d02e4b6e34f3: no results to fetch
+2025-08-06 13:41:50,524 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:41:51,156 - ERROR - Error checking device existence for dffef55f-cdb1-4763-b79d-48dd95b633da: no results to fetch
+2025-08-06 13:42:00,701 - ERROR - Error checking device existence for 04c94a09-86cd-4ad5-a05a-c675d4b0ee93: no results to fetch
+2025-08-06 13:42:14,735 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:42:35,653 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:42:37,069 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:42:38,834 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:42:43,327 - ERROR - Error checking device existence for e147036f-b832-4ff5-9949-a9ac3b70d1bd: no results to fetch
+2025-08-06 13:42:48,902 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:42:50,141 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:42:50,142 - ERROR - Error checking device existence for 17cb0039-c9a0-4f2f-b0ab-84f5c87d5a27: no results to fetch
+2025-08-06 13:42:53,381 - ERROR - Error checking device existence for 688f85ca-37d1-45db-b0c5-d967bf80bfc7: no results to fetch
+2025-08-06 13:43:00,516 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:43:01,259 - ERROR - Error checking device existence for 9ccc8a19-8b6a-4e45-bb35-390fc7b4b2f8: no results to fetch
+2025-08-06 13:43:04,391 - ERROR - Error checking device existence for 0c45f3ac-575f-452d-a3da-9590cc19b841: no results to fetch
+2025-08-06 13:43:06,818 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:43:06,852 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:43:06,852 - ERROR - Error checking device existence for 11af30c5-79de-4fa2-affc-efac883df250: no results to fetch
+2025-08-06 13:43:23,904 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:43:23,904 - ERROR - Error checking device existence for a6ee670f-4d60-4c84-8c12-86eb481010a7: no results to fetch
+2025-08-06 13:43:28,380 - ERROR - Error checking device existence for ff464d07-6495-4f68-a55f-9db8e72c55f2: no results to fetch
+2025-08-06 13:43:28,908 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:43:28,908 - ERROR - Error checking device existence for a995b284-54c5-45bd-a1f6-36ff72e43ef4: no results to fetch
+2025-08-06 13:43:36,897 - ERROR - Error checking device existence for f86760b5-20c1-45df-af9e-423848a1e401: no results to fetch
+2025-08-06 13:44:04,665 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:44:36,783 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:44:43,818 - ERROR - Error checking device existence for 8c515d69-34b5-4623-9581-c0e75a59cdf3: no results to fetch
+2025-08-06 13:44:49,516 - ERROR - Error checking device existence for b58a1aba-2041-455d-8d47-92385e927886: no results to fetch
+2025-08-06 13:44:50,722 - ERROR - Error checking device existence for 13b63abf-e75e-4995-a6a3-af1bbad59ad2: no results to fetch
+2025-08-06 13:44:57,794 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:44:58,486 - ERROR - Error checking device existence for 5361c8a2-8181-4060-94ff-d5cdde78c17c: no results to fetch
+2025-08-06 13:44:59,020 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:45:02,221 - ERROR - Error checking device existence for 0a7871c7-643f-413b-bab5-936ef697e644: no results to fetch
+2025-08-06 13:45:03,630 - ERROR - Error checking device existence for c6a1d221-4d99-4815-814b-69c95404e082: no results to fetch
+2025-08-06 13:45:10,074 - ERROR - Error checking device existence for 02d0ffea-71ed-42de-980c-9e02d963056f: no results to fetch
+2025-08-06 13:45:11,427 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:45:15,405 - ERROR - Error checking device existence for 4acb413a-21d0-40e7-bc5f-0e6c5fde8708: no results to fetch
+2025-08-06 13:45:31,147 - ERROR - Error checking device existence for 58ccd27d-98db-4be3-ac8c-4e88c5cab0a4: no results to fetch
+2025-08-06 13:46:08,103 - ERROR - Error processing actor data for DE-MF-000005906: no results to fetch
+2025-08-06 13:46:37,309 - ERROR - Error checking device existence for c07f3256-e80b-4257-9e7f-117189139c19: no results to fetch

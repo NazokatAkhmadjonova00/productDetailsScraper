@@ -1,0 +1,336 @@
+{
+  "uuid" : "84585289-f659-487c-859b-fcb215ab1f45",
+  "ulid" : "01JTJZCAYK4ZN4ET06HE7A5K5M",
+  "certificateNumber" : "SCAR-2.2.1.0",
+  "revisionNumber" : null,
+  "issueDate" : "2024-12-19",
+  "decisionDate" : null,
+  "startingValidityDate" : "2024-12-19",
+  "expiryDate" : "2029-12-18",
+  "certificateId" : "3022SCAR-2.2.1.0",
+  "statusChangeReasons" : null,
+  "applicableLegislation" : {
+    "code" : "refdata.applicable-legislation.mdr",
+    "legacyDirective" : false
+  },
+  "type" : {
+    "code" : "refdata.certificate-mdr-type.quality-management-system"
+  },
+  "status" : {
+    "code" : "refdata.certificate-status.issued"
+  },
+  "manufacturer" : {
+    "uuid" : "a0a8d29b-7dff-4898-9d96-8dd3f21b46e2",
+    "ulid" : "01FF7EG1B98NVMF1ABZF7GTVHK",
+    "versionNumber" : 4,
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "latestVersion" : true,
+    "lastUpdateDate" : "2024-06-18T14:55:46.776",
+    "name" : "Skin Analytics Ltd.",
+    "names" : {
+      "texts" : [ {
+        "language" : {
+          "isoCode" : "en",
+          "name" : "English"
+        },
+        "text" : "Skin Analytics Ltd.",
+        "allLanguagesApplicable" : null
+      } ]
+    },
+    "abbreviatedNames" : null,
+    "actorType" : {
+      "code" : "refdata.actor-type.manufacturer",
+      "srnCode" : "MF",
+      "category" : "ECONOMIC_ENTITY"
+    },
+    "status" : {
+      "code" : "refdata.actor-status.active"
+    },
+    "statusFromDate" : null,
+    "countryIso2Code" : "UK",
+    "countryName" : "United Kingdom (ex Northern Ireland)",
+    "countryType" : "NON_EU",
+    "geographicalAddress" : "Smithfield Business Centre 2nd Floor EC1M 4BH London",
+    "electronicMail" : "james.hamlyn@skinanalytics.co.uk",
+    "telephone" : "+44 208 064 1967",
+    "srn" : "GB-MF-000017972",
+    "actorValidated" : null
+  },
+  "authorisedRepresentatives" : [ {
+    "uuid" : "b58f58ee-54e9-443c-8327-20a729a51af6",
+    "ulid" : "01EREJ0CWK6TGZW5NBDDGK4NXX",
+    "versionNumber" : 5,
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "latestVersion" : true,
+    "lastUpdateDate" : "2024-11-19T17:25:48.817",
+    "name" : "Advena Limited",
+    "names" : {
+      "texts" : [ {
+        "language" : {
+          "isoCode" : "en",
+          "name" : "English"
+        },
+        "text" : "Advena Limited",
+        "allLanguagesApplicable" : null
+      } ]
+    },
+    "abbreviatedNames" : null,
+    "actorType" : {
+      "code" : "refdata.actor-type.authorised-representative",
+      "srnCode" : "AR",
+      "category" : "ECONOMIC_ENTITY"
+    },
+    "status" : {
+      "code" : "refdata.actor-status.active"
+    },
+    "statusFromDate" : null,
+    "countryIso2Code" : "MT",
+    "countryName" : "Malta",
+    "countryType" : "EU_MEMBER_STATE",
+    "geographicalAddress" : "Tower Street BKR4013 Swatar",
+    "electronicMail" : "prrc@advena.mt",
+    "telephone" : null,
+    "srn" : "MT-AR-000000234",
+    "actorValidated" : null
+  } ],
+  "notifiedBody" : {
+    "uuid" : "97014c9c-8662-444a-9bb8-5f52fbd2e126",
+    "ulid" : "01HG4CAC7EY9T66APHVXBJ0SEX",
+    "versionNumber" : 1,
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "latestVersion" : true,
+    "lastUpdateDate" : "2023-11-26T00:16:30.065",
+    "name" : "Scarlet NB B.V.",
+    "names" : {
+      "texts" : [ {
+        "language" : null,
+        "text" : "Scarlet NB B.V.",
+        "allLanguagesApplicable" : true
+      } ]
+    },
+    "abbreviatedNames" : {
+      "texts" : [ {
+        "language" : null,
+        "text" : "Scarlet",
+        "allLanguagesApplicable" : true
+      } ]
+    },
+    "actorType" : {
+      "code" : "refdata.actor-type.notified-body",
+      "srnCode" : "NB",
+      "category" : "SUPERVISING_ENTITY"
+    },
+    "status" : null,
+    "statusFromDate" : null,
+    "countryIso2Code" : "NL",
+    "countryName" : "Netherlands",
+    "countryType" : "EU_MEMBER_STATE",
+    "geographicalAddress" : "Keizersgracht 555, 1017 DR  Amsterdam   Amsterdam ",
+    "electronicMail" : "regulatory@scarletcomply.com",
+    "telephone" : "+31 202409000",
+    "srn" : "3022",
+    "actorValidated" : null
+  },
+  "producer" : null,
+  "documents" : [ {
+    "uuid" : "26b8b475-a41d-43b3-a804-6766d9b2fc7d",
+    "originalFileName" : "SCAR-2.2.1.0.pdf",
+    "fileContentType" : "application/pdf",
+    "fileSize" : 1322437,
+    "tempFileName" : null,
+    "type" : {
+      "code" : "refdata.document-type.certificate",
+      "accessType" : "PUBLIC"
+    },
+    "languages" : [ {
+      "isoCode" : "en",
+      "name" : "English"
+    } ],
+    "referenceDocId" : null,
+    "primaryModuleName" : "CRF",
+    "indexed" : false,
+    "virusCheck" : 0,
+    "new" : false
+  } ],
+  "conditionsApplicable" : false,
+  "conditions" : null,
+  "languages" : [ {
+    "isoCode" : "en",
+    "name" : "English"
+  } ],
+  "scopes" : [ {
+    "uuid" : "e4265a14-30c2-428f-827d-464bc3fbd8c0",
+    "basicUdiData" : {
+      "uuid" : "5b969a22-675b-446f-8e39-c08c2d6570c1",
+      "ulid" : "01JJKQ0W6GV6NEXKW68AMWFE6T",
+      "udiDiData" : null,
+      "manufacturer" : {
+        "uuid" : "a0a8d29b-7dff-4898-9d96-8dd3f21b46e2",
+        "ulid" : "01FF7EG1B98NVMF1ABZF7GTVHK",
+        "versionNumber" : 4,
+        "versionState" : {
+          "code" : "refdata.eudamed-entity-version-status.registered"
+        },
+        "latestVersion" : true,
+        "lastUpdateDate" : "2024-06-18T14:55:46.776",
+        "name" : "Skin Analytics Ltd.",
+        "names" : {
+          "texts" : [ {
+            "language" : {
+              "isoCode" : "en",
+              "name" : "English"
+            },
+            "text" : "Skin Analytics Ltd.",
+            "allLanguagesApplicable" : null
+          } ]
+        },
+        "abbreviatedNames" : null,
+        "actorType" : {
+          "code" : "refdata.actor-type.manufacturer",
+          "srnCode" : "MF",
+          "category" : "ECONOMIC_ENTITY"
+        },
+        "status" : {
+          "code" : "refdata.actor-status.active"
+        },
+        "statusFromDate" : null,
+        "countryIso2Code" : "UK",
+        "countryName" : "United Kingdom (ex Northern Ireland)",
+        "countryType" : "NON_EU",
+        "geographicalAddress" : "Smithfield Business Centre 2nd Floor EC1M 4BH London",
+        "electronicMail" : "james.hamlyn@skinanalytics.co.uk",
+        "telephone" : "+44 208 064 1967",
+        "srn" : "GB-MF-000017972",
+        "actorValidated" : null
+      },
+      "authorisedRepresentative" : null,
+      "active" : true,
+      "administeringMedicine" : false,
+      "animalTissues" : false,
+      "nbDecision" : null,
+      "basicUdi" : {
+        "uuid" : "07f2060c-1374-473b-8f55-f16e3981a942",
+        "code" : "506071773DERM-DX-CEMDRXU",
+        "issuingAgency" : {
+          "code" : "refdata.issuing-agency.gs1"
+        },
+        "type" : "BASIC_UDI",
+        "new" : false
+      },
+      "companionDiagnostics" : null,
+      "reagent" : null,
+      "instrument" : null,
+      "professionalTesting" : null,
+      "kit" : null,
+      "device" : false,
+      "multiComponent" : null,
+      "deviceCriterion" : "STANDARD",
+      "basicUdiType" : null,
+      "deviceModel" : "Deep Ensemble for Recognition of Malignancy (DERM) V4",
+      "deviceModelApplicable" : true,
+      "deviceName" : "DERM",
+      "humanTissues" : false,
+      "humanProduct" : false,
+      "medicinalProduct" : false,
+      "implantable" : false,
+      "sutures" : null,
+      "legislation" : {
+        "code" : "refdata.applicable-legislation.mdr",
+        "legacyDirective" : false
+      },
+      "measuringFunction" : false,
+      "microbialSubstances" : null,
+      "nearPatientTesting" : null,
+      "reusable" : false,
+      "riskClass" : {
+        "code" : "refdata.risk-class.class-iii"
+      },
+      "selfTesting" : null,
+      "specialDeviceType" : {
+        "code" : "refdata.special-mdr-device-type.software"
+      },
+      "specialDeviceTypeApplicable" : true,
+      "medicalPurpose" : null,
+      "typeExaminationApplicable" : false,
+      "deviceCertificateInfoList" : null,
+      "deviceCertificateInfoListForDisplay" : null,
+      "clinicalInvestigationApplicable" : true,
+      "clinicalInvestigationLinks" : null,
+      "versionDate" : "2025-01-27T12:05:51.577",
+      "versionState" : {
+        "code" : "refdata.eudamed-entity-version-status.submitted"
+      },
+      "latestVersion" : false,
+      "versionNumber" : 1,
+      "legacyDeviceUdiDiApplicable" : null,
+      "discardedDate" : null,
+      "linkedSscp" : null,
+      "containerType" : "UDI_DI",
+      "new" : false
+    },
+    "type" : "QUALITY_PROCEDURE_SCOPE",
+    "unregisteredDevice" : null,
+    "cecpUnregisteredDevice" : null,
+    "basicUdiNotReferredInOtherCertificate" : false,
+    "isPreceding" : null,
+    "wasCecpFollowed" : null,
+    "mosOutsideEudamed" : null,
+    "qualityProcedureScopeType" : "DEVICE",
+    "customMadeClassIIIImplantable" : false,
+    "description" : null,
+    "name" : null,
+    "referenceCatalogueNumber" : null,
+    "deviceGroupIdentification" : null,
+    "riskClasses" : [ {
+      "code" : "refdata.risk-class.class-iii"
+    } ],
+    "deviceCharacteristics" : null,
+    "systemProcedurePack" : null,
+    "updatedToBasicUdiData" : null,
+    "new" : false
+  } ],
+  "additionalStatusChangeReason" : null,
+  "applicationReference" : null,
+  "sppApplicable" : false,
+  "sppType" : null,
+  "versionState" : {
+    "code" : "refdata.eudamed-entity-version-status.registered"
+  },
+  "latestVersion" : true,
+  "versionNumber" : 1,
+  "discardedDate" : null,
+  "animalTissues" : false,
+  "humanTissues" : false,
+  "sterile" : false,
+  "inVitroDiagnostics" : false,
+  "intendedMedicalPurpose" : false,
+  "cecps" : null,
+  "cecpApplicable" : null,
+  "sscps" : [ ],
+  "decisionComments" : null,
+  "otherDecisionReasons" : null,
+  "decisionDocuments" : null,
+  "precedingCertificates" : [ ],
+  "mosOutsideEudamed" : null,
+  "acceptedDisclaimer" : null,
+  "ivdrMechanismOfScrutiny" : null,
+  "eligibleBasicUdisForSscp" : [ ],
+  "discardAllowed" : false,
+  "cecpPublicDocuments" : null,
+  "eligibleCecps" : {
+    "cecps" : [ ],
+    "basicUdiUuidsNotFound" : [ ]
+  },
+  "mechanismOfScrutinyEnabled" : false,
+  "sscpEnabled" : false,
+  "startingDecisionApplicabilityDate" : null,
+  "qmsMosType" : "BASIC_UDI_DI_DATA_ONLY",
+  "versionDate" : "2025-05-06T16:32:16.19",
+  "new" : false
+}

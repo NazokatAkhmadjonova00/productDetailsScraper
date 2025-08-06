@@ -227,16 +227,30 @@ class CertificateImporter:
                 certificate_uuid = uuid
                 intended_purpose = product.get("intendedPurpose", {}).get("text", "")
 
+                basic_udi = product.get("basicUdiData", {})
+                if isinstance(basic_udi, dict):
+                    udi_di_uuid = basic_udi.get("uuid", "")
+                elif isinstance(basic_udi, list):
+                    udi_di_uuid = basic_udi[0].get("uuid", "")
+                elif basic_udi is None:
+                    udi_di_uuid = product.get("deviceGroupIdentification", "")
+                else:
+                    udi_di_uuid = ""
+
+
+
                 certificate_udi_query = """
                 INSERT INTO certificate_udi (
                     certificate_uuid,
+                    devices,
                     intended_purpose
                 ) VALUES (
-                    %s, %s
+                    %s, %s, %s
                 );
                 """
                 certificate_udi_params = (
                     certificate_uuid,
+                    udi_di_uuid,
                     intended_purpose
                 )
 
