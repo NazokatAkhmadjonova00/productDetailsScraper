@@ -1,2 +1,145 @@
 2025-08-06 13:25:24,466 - ERROR - Error checking device existence for 4a8a2b87-50d8-42a9-9118-dc7101af574e: no results to fetch
 2025-08-06 13:25:28,177 - ERROR - Error checking device existence for e0d5c5fe-4236-472b-ae43-5eb629da3c37: no results to fetch
+2025-08-06 13:25:38,850 - ERROR - Error processing actor data for IT-MF-000007391: no results to fetch
+2025-08-06 13:25:38,852 - ERROR - Error checking device existence for 2c67174e-cf3d-42ad-9268-c34d5cb08916: no results to fetch
+2025-08-06 13:25:41,811 - ERROR - Error checking device existence for 71472c42-4028-4421-8c0f-b88955090b22: no results to fetch
+2025-08-06 13:25:42,423 - ERROR - Error processing actor data for NO-MF-000001425: no results to fetch
+2025-08-06 13:25:42,423 - ERROR - Error processing actor data for DE-MF-000006539: no results to fetch
+2025-08-06 13:25:42,424 - ERROR - Error checking device existence for 6c9b3e6f-61e7-4f07-a074-34488ef37a9c: no results to fetch
+2025-08-06 13:25:42,424 - ERROR - Error checking device existence for ac959719-73e2-4fa0-8ba6-8258e3aa50e4: no results to fetch
+2025-08-06 13:25:44,585 - ERROR - Error processing actor data for DE-MF-000006539: no results to fetch
+2025-08-06 13:25:44,586 - ERROR - Error checking device existence for 718ddc0b-9f26-458f-a5b8-6fbd8a21af70: no results to fetch
+2025-08-06 13:25:46,527 - ERROR - Error processing actor data for US-MF-000007058: no results to fetch
+2025-08-06 13:25:47,092 - ERROR - SQL-ERROR:
+duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(e2a38e8b-90b1-481a-a36f-dd48100c6b19) already exists.
+
+\u21b3 Query: 
+            INSERT INTO operators (
+                uuid,
+                actor_id,
+                version,
+                role,
+                name,
+                abbreviated_name,
+                city_name,
+                country,
+                details_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        
+\u21b3 Params: ('e2a38e8b-90b1-481a-a36f-dd48100c6b19', 'DE-MF-000006539', 1, 'Manufacturer', 'Wieds Ecochem AG', 'Systemanbieter Chemischer Produkte', 'Freudenberg', 'Germany', None)
+2025-08-06 13:25:47,092 - ERROR - Error processing actor data for DE-MF-000006539: duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(e2a38e8b-90b1-481a-a36f-dd48100c6b19) already exists.
+
+2025-08-06 13:26:06,087 - ERROR - Error checking device existence for 5303b91b-08af-490a-a94e-b4b280cca451: no results to fetch
+2025-08-06 13:26:33,551 - ERROR - Error checking device existence for 3616644e-5f61-44dc-891e-fc8925898b58: no results to fetch
+2025-08-06 13:26:40,424 - ERROR - Error processing actor data for US-MF-000031450: no results to fetch
+2025-08-06 13:26:40,429 - ERROR - Error checking device existence for 3b1bb1b0-7a47-4418-8400-326bc49ba75f: no results to fetch
+2025-08-06 13:26:41,444 - ERROR - Error checking device existence for 3b1bb1b0-7a47-4418-8400-326bc49ba75f: no results to fetch
+2025-08-06 13:26:42,070 - ERROR - Error processing actor data for US-MF-000031450: no results to fetch
+2025-08-06 13:26:42,071 - ERROR - Error checking device existence for b0c7a957-e6bf-45cf-8580-b6673614d8b5: no results to fetch
+2025-08-06 13:26:59,139 - ERROR - Error checking device existence for 83a46ab0-b54c-4bb0-b1fd-984e4183656f: no results to fetch
+2025-08-06 13:26:59,139 - ERROR - Error checking device existence for b1dd0c1b-2b31-4631-bb7d-6f7f9b313d63: no results to fetch
+2025-08-06 13:27:01,328 - ERROR - Error checking device existence for 4025b6c4-cde8-49b2-9924-d0950f932a25: no results to fetch
+2025-08-06 13:27:18,300 - ERROR - Error processing actor data for US-MF-000031450: no results to fetch
+2025-08-06 13:27:18,300 - ERROR - Error checking device existence for 9bed8a70-7fd3-4c18-a0e4-dc40630c7c4b: no results to fetch
+2025-08-06 13:27:18,300 - ERROR - Error checking device existence for 323aa81c-4122-401b-bbea-9bce91929299: no results to fetch
+2025-08-06 13:27:18,980 - ERROR - Error checking device existence for 9bed8a70-7fd3-4c18-a0e4-dc40630c7c4b: no results to fetch
+2025-08-06 13:27:18,985 - ERROR - Error checking device existence for ee86bc9e-d25e-42fc-b7c1-0686f1f8fab6: no results to fetch
+2025-08-06 13:27:18,988 - ERROR - Error processing actor data for US-MF-000013030: no results to fetch
+2025-08-06 13:27:18,990 - ERROR - Error checking device existence for e6fb4e8e-b31e-4779-bd6b-7a90701f8300: no results to fetch
+2025-08-06 13:27:19,528 - ERROR - Error processing actor data for US-MF-000013030: no results to fetch
+2025-08-06 13:27:19,529 - ERROR - Error checking device existence for a979d130-f5e1-4b75-bec9-e5aad18f0793: no results to fetch
+2025-08-06 13:27:19,530 - ERROR - SQL-ERROR:
+duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(96b1d1d9-9b3e-4f25-801a-d048e9e9c90b) already exists.
+
+\u21b3 Query: 
+            INSERT INTO operators (
+                uuid,
+                actor_id,
+                version,
+                role,
+                name,
+                abbreviated_name,
+                city_name,
+                country,
+                details_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        
+\u21b3 Params: ('96b1d1d9-9b3e-4f25-801a-d048e9e9c90b', 'US-MF-000031450', 1, 'Manufacturer', 'Medgyn International, Inc', 'Medgyn', 'Addison  IL', 'United States', None)
+2025-08-06 13:27:19,530 - ERROR - SQL-ERROR:
+current transaction is aborted, commands ignored until end of transaction block
+
+\u21b3 Query: 
+        INSERT INTO devices (
+            uuid,
+            eudamed_id,
+            udi_id,
+            version,
+            trade_name,
+            risk_class,
+            manufacturer,
+            actor_id,
+            details_url
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s
+        )
+        ON CONFLICT (uuid) DO UPDATE SET
+            eudamed_id = EXCLUDED.eudamed_id,
+            udi_id = EXCLUDED.udi_id,
+            version = EXCLUDED.version,
+            trade_name = EXCLUDED.trade_name,
+            risk_class = EXCLUDED.risk_class,
+            manufacturer = EXCLUDED.manufacturer,
+            actor_id = EXCLUDED.actor_id,
+            details_url = EXCLUDED.details_url;
+        
+\u21b3 Params: ('a979d130-f5e1-4b75-bec9-e5aad18f0793', 'M766143067480', 'B-M766143067480', 1, 'Stroller', 'class-iia', 'CAIRE Inc.', 'US-MF-000013030', 'https://ec.europa.eu/tools/eudamed/api/devices/basicUdiData/udiDiData/a979d130-f5e1-4b75-bec9-e5aad18f0793?customError=null&languageIso2Code=en')
+2025-08-06 13:27:19,530 - ERROR - Error processing actor data for US-MF-000031450: duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(96b1d1d9-9b3e-4f25-801a-d048e9e9c90b) already exists.
+
+2025-08-06 13:27:19,532 - ERROR - ERROR - DEVICE PAGE 19: current transaction is aborted, commands ignored until end of transaction block
+
+2025-08-06 13:27:29,042 - ERROR - Error processing actor data for TR-MF-000025066: no results to fetch
+2025-08-06 13:27:29,042 - ERROR - Error checking device existence for d7cc2313-6a4d-4cb9-bbce-da5f7e2576ae: no results to fetch
+2025-08-06 13:27:32,982 - ERROR - Error processing actor data for TR-MF-000025066: no results to fetch
+2025-08-06 13:27:32,984 - ERROR - Error checking device existence for d5fb21b9-a13b-44cc-9fc6-cecd264babb9: no results to fetch
+2025-08-06 13:27:36,473 - ERROR - Error checking device existence for 8569b9c5-f417-4a6e-a43e-c69160da0c5a: no results to fetch
+2025-08-06 13:27:40,898 - ERROR - Error processing actor data for TR-MF-000025066: no results to fetch
+2025-08-06 13:27:43,448 - ERROR - Error processing actor data for TR-MF-000025066: no results to fetch
+2025-08-06 13:27:43,448 - ERROR - Error checking device existence for aeea6e70-ae1a-4235-a807-fe3cea366fb3: no results to fetch
+2025-08-06 13:28:03,332 - ERROR - Error checking device existence for 03eabe36-95fe-45df-b719-7102a18861f7: no results to fetch
+2025-08-06 13:28:03,910 - ERROR - Error processing actor data for TR-MF-000025066: no results to fetch
+2025-08-06 13:28:06,548 - ERROR - Error processing actor data for TR-MF-000025066: no results to fetch
+2025-08-06 13:28:21,982 - ERROR - Error checking device existence for a8343f57-ee64-46ba-a379-2bb41a8b2c3e: no results to fetch
+2025-08-06 13:28:36,436 - ERROR - SQL-ERROR:
+duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(2e68d9df-dbfc-41cf-af5b-ad07337feb01) already exists.
+
+\u21b3 Query: 
+            INSERT INTO operators (
+                uuid,
+                actor_id,
+                version,
+                role,
+                name,
+                abbreviated_name,
+                city_name,
+                country,
+                details_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        
+\u21b3 Params: ('2e68d9df-dbfc-41cf-af5b-ad07337feb01', 'TR-MF-000025066', 2, 'Manufacturer', 'D\u0130SERA TIBB\u0130 MALZEME LOJ\u0130ST\u0130K SAN. VE T\u0130C. A.\u015e.', None, '\u0130ZM\u0130R', 'Türkiye', None)
+2025-08-06 13:28:36,436 - ERROR - Error processing actor data for TR-MF-000025066: duplicate key value violates unique constraint "operators_pkey"
+DETAIL:  Key (uuid)=(2e68d9df-dbfc-41cf-af5b-ad07337feb01) already exists.
+
+2025-08-06 13:28:42,361 - ERROR - Error checking device existence for 898b606a-82e8-46f4-8f1c-0356eaa60686: no results to fetch
+2025-08-06 13:29:06,611 - ERROR - Error processing actor data for TR-MF-000025066: no results to fetch
+2025-08-06 13:29:06,611 - ERROR - Error checking device existence for 66fb9aad-35f0-4912-9cc9-05e53770c190: no results to fetch
+2025-08-06 13:29:10,838 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:29:10,838 - ERROR - Error checking device existence for 350febd6-6c1b-4212-99c8-6df4c7f40720: no results to fetch
+2025-08-06 13:29:15,513 - ERROR - Error checking device existence for 0c1b4e96-1afc-405b-84bd-5941ec87eb2e: no results to fetch
+2025-08-06 13:29:18,612 - ERROR - Error processing actor data for FR-MF-000001820: no results to fetch
+2025-08-06 13:29:18,612 - ERROR - Error checking device existence for b1a9aa5d-5e40-4ffa-b241-9065dbfc2e70: no results to fetch
+2025-08-06 13:29:37,324 - ERROR - Error checking device existence for 3462b15b-c7a1-4a05-ae55-248492511170: no results to fetch
