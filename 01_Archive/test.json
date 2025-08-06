@@ -1,0 +1,692 @@
+{
+  "uuid" : "7ab91e66-b2ea-4c83-bfd2-4e5201de406f",
+  "ulid" : "01HCF95GRE048WZNT1FEGZN1DQ",
+  "certificateNumber" : "IX 1191616-6",
+  "revisionNumber" : "Rev. 1",
+  "issueDate" : "2024-04-18",
+  "decisionDate" : null,
+  "startingValidityDate" : "2024-04-18",
+  "expiryDate" : "2028-09-27",
+  "certificateId" : "0197IX 1191616-6Rev. 1",
+  "statusChangeReasons" : [ {
+    "code" : "refdata.status-change-reason-supplemented.other"
+  } ],
+  "applicableLegislation" : {
+    "code" : "refdata.applicable-legislation.ivdr",
+    "legacyDirective" : false
+  },
+  "type" : {
+    "code" : "refdata.certificate-ivdr-type.technical-documentation"
+  },
+  "status" : {
+    "code" : "refdata.certificate-status.supplemented"
+  },
+  "manufacturer" : {
+    "uuid" : "5f078ef2-4d66-4ef3-934b-755a67823051",
+    "ulid" : "01ERHBJNCRVH1CH36CEMQCZP8A",
+    "versionNumber" : 2,
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "latestVersion" : false,
+    "lastUpdateDate" : "2023-08-22T10:18:02.895",
+    "name" : "IMMUCOR Medizinische Diagnostik GmbH",
+    "names" : {
+      "texts" : [ {
+        "language" : {
+          "isoCode" : "de",
+          "name" : "German"
+        },
+        "text" : "IMMUCOR Medizinische Diagnostik GmbH",
+        "allLanguagesApplicable" : null
+      } ]
+    },
+    "abbreviatedNames" : null,
+    "actorType" : {
+      "code" : "refdata.actor-type.manufacturer",
+      "srnCode" : "MF",
+      "category" : "ECONOMIC_ENTITY"
+    },
+    "status" : {
+      "code" : "refdata.actor-status.active"
+    },
+    "statusFromDate" : null,
+    "countryIso2Code" : "DE",
+    "countryName" : "Germany",
+    "countryType" : "EU_MEMBER_STATE",
+    "geographicalAddress" : "32 Robert-Bosch-Straße 63303 Dreieich",
+    "electronicMail" : "germany@immucor.com",
+    "telephone" : "+49 6103 8056 0",
+    "srn" : "DE-MF-000006494",
+    "actorValidated" : null
+  },
+  "authorisedRepresentatives" : null,
+  "notifiedBody" : {
+    "uuid" : "9a15d97d-c8d5-4e7a-ad2a-10470cf3c8c9",
+    "ulid" : "01EX1WAY34V3XSWY26WPG3PXDR",
+    "versionNumber" : 30,
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "latestVersion" : true,
+    "lastUpdateDate" : "2021-10-02T00:15:30.471",
+    "name" : "TÜV Rheinland LGA Products GmbH",
+    "names" : {
+      "texts" : [ {
+        "language" : null,
+        "text" : "TÜV Rheinland LGA Products GmbH",
+        "allLanguagesApplicable" : true
+      } ]
+    },
+    "abbreviatedNames" : null,
+    "actorType" : {
+      "code" : "refdata.actor-type.notified-body",
+      "srnCode" : "NB",
+      "category" : "SUPERVISING_ENTITY"
+    },
+    "status" : {
+      "code" : "refdata.actor-status.active"
+    },
+    "statusFromDate" : null,
+    "countryIso2Code" : "DE",
+    "countryName" : "Germany",
+    "countryType" : "EU_MEMBER_STATE",
+    "geographicalAddress" : "Tillystraße 2 90431 Nürnberg 90431 Nürnberg",
+    "electronicMail" : "service@de.tuv.com",
+    "telephone" : "+49 (0) 9116555225",
+    "srn" : "0197",
+    "actorValidated" : null
+  },
+  "producer" : null,
+  "documents" : [ {
+    "uuid" : "7b3ee756-f01a-4afc-80ef-233f972c01af",
+    "originalFileName" : "IMMUC_DRE_IX 1191616-6_2024-04-18-rev.1.pdf",
+    "fileContentType" : "application/pdf",
+    "fileSize" : 715128,
+    "tempFileName" : null,
+    "type" : {
+      "code" : "refdata.document-type.certificate",
+      "accessType" : "PUBLIC"
+    },
+    "languages" : [ {
+      "isoCode" : "en",
+      "name" : "English"
+    } ],
+    "referenceDocId" : null,
+    "primaryModuleName" : "CRF",
+    "indexed" : false,
+    "virusCheck" : 0,
+    "new" : false
+  } ],
+  "conditionsApplicable" : false,
+  "conditions" : null,
+  "languages" : [ {
+    "isoCode" : "en",
+    "name" : "English"
+  } ],
+  "scopes" : [ {
+    "uuid" : "824d962b-1ab2-4d74-b048-ecf0ca6706e3",
+    "basicUdiData" : {
+      "uuid" : "47fdb8ee-1381-4e56-842d-bdd1ecfdf818",
+      "ulid" : "01HE7RJMKNJK58R9FTZV9S3FDW",
+      "udiDiData" : null,
+      "manufacturer" : {
+        "uuid" : "c34d05ff-6b14-477a-bffe-39d72b04d1ce",
+        "ulid" : "01ERHBJNCRVH1CH36CEMQCZP8A",
+        "versionNumber" : 5,
+        "versionState" : {
+          "code" : "refdata.eudamed-entity-version-status.registered"
+        },
+        "latestVersion" : true,
+        "lastUpdateDate" : "2024-10-11T17:36:47.719",
+        "name" : "IMMUCOR Medizinische Diagnostik GmbH",
+        "names" : {
+          "texts" : [ {
+            "language" : {
+              "isoCode" : "de",
+              "name" : "German"
+            },
+            "text" : "IMMUCOR Medizinische Diagnostik GmbH",
+            "allLanguagesApplicable" : null
+          } ]
+        },
+        "abbreviatedNames" : null,
+        "actorType" : {
+          "code" : "refdata.actor-type.manufacturer",
+          "srnCode" : "MF",
+          "category" : "ECONOMIC_ENTITY"
+        },
+        "status" : {
+          "code" : "refdata.actor-status.active"
+        },
+        "statusFromDate" : null,
+        "countryIso2Code" : "DE",
+        "countryName" : "Germany",
+        "countryType" : "EU_MEMBER_STATE",
+        "geographicalAddress" : "32 Robert-Bosch-Straße 63303 Dreieich",
+        "electronicMail" : "germany@immucor.com",
+        "telephone" : "+49 6103 8056 0",
+        "srn" : "DE-MF-000006494",
+        "actorValidated" : null
+      },
+      "authorisedRepresentative" : null,
+      "active" : null,
+      "administeringMedicine" : null,
+      "animalTissues" : true,
+      "nbDecision" : {
+        "uuid" : null,
+        "reason" : null,
+        "actor" : null,
+        "date" : null,
+        "new" : true
+      },
+      "basicUdi" : {
+        "uuid" : "2e80e503-86ce-48d9-8c98-117a9e528d29",
+        "code" : "88823405W0103030202D28JP",
+        "issuingAgency" : {
+          "code" : "refdata.issuing-agency.gs1"
+        },
+        "type" : "BASIC_UDI",
+        "new" : false
+      },
+      "companionDiagnostics" : false,
+      "reagent" : true,
+      "instrument" : false,
+      "professionalTesting" : true,
+      "kit" : false,
+      "device" : null,
+      "multiComponent" : null,
+      "deviceCriterion" : "STANDARD",
+      "basicUdiType" : null,
+      "deviceModel" : null,
+      "deviceModelApplicable" : false,
+      "deviceName" : "immuClone (2) Anti-c IgM",
+      "humanTissues" : false,
+      "humanProduct" : null,
+      "medicinalProduct" : null,
+      "implantable" : null,
+      "sutures" : null,
+      "legislation" : {
+        "code" : "refdata.applicable-legislation.ivdr",
+        "legacyDirective" : false
+      },
+      "measuringFunction" : null,
+      "microbialSubstances" : false,
+      "nearPatientTesting" : false,
+      "reusable" : null,
+      "riskClass" : {
+        "code" : "refdata.risk-class.class-d"
+      },
+      "selfTesting" : false,
+      "specialDeviceType" : null,
+      "specialDeviceTypeApplicable" : false,
+      "medicalPurpose" : null,
+      "typeExaminationApplicable" : false,
+      "deviceCertificateInfoList" : null,
+      "deviceCertificateInfoListForDisplay" : null,
+      "clinicalInvestigationApplicable" : false,
+      "clinicalInvestigationLinks" : null,
+      "versionDate" : "2023-11-02T11:35:34.654",
+      "versionState" : {
+        "code" : "refdata.eudamed-entity-version-status.registered"
+      },
+      "latestVersion" : true,
+      "versionNumber" : 1,
+      "legacyDeviceUdiDiApplicable" : null,
+      "discardedDate" : null,
+      "linkedSscp" : null,
+      "containerType" : "UDI_DI",
+      "new" : false
+    },
+    "type" : "PRODUCT_PROCEDURE_SCOPE",
+    "unregisteredDevice" : null,
+    "cecpUnregisteredDevice" : null,
+    "basicUdiNotReferredInOtherCertificate" : true,
+    "isPreceding" : true,
+    "wasCecpFollowed" : null,
+    "mosOutsideEudamed" : null,
+    "basicUdiKnown" : null,
+    "intendedPurpose" : {
+      "texts" : [ {
+        "language" : {
+          "isoCode" : "en",
+          "name" : "English"
+        },
+        "text" : "immuClone® (2) Anti-c IgM and immuClone® (2) Anti-c Galileo IgM are in vitro diagnostic Blood Group Reagents used to detect the c erythrocyte antigen from donors and recipients by direct hemagglutination test for the purpose of a blood transfusion to ensure the safety and compatibility between the patient and the blood component selected for transfusion. For Manual Tube, Slide, Microplate and Automated Microplate Tests (qualitative). immuClone® (2) Anti-c IgM is intended for Manual Tube, Slide and Microplate Tests (qualitative). immuClone® (2) Anti-c Galileo IgM is intended for Automated Microplate Tests (qualitative).",
+        "allLanguagesApplicable" : null
+      } ]
+    },
+    "deviceTypeCodes" : [ {
+      "uuid" : "CD48A569E3A78334E05343E4A79E78D8",
+      "code" : "IVR0102",
+      "description" : {
+        "texts" : [ {
+          "language" : {
+            "isoCode" : "en",
+            "name" : "English"
+          },
+          "text" : "Devices intended to determine markers of the Rhesus system [RH1 (D), RHW1, RH2 (C), RH3 (E), RH4 (c), RH5 (e)]",
+          "allLanguagesApplicable" : null
+        } ]
+      },
+      "horizontalDeviceType" : false,
+      "mdr" : false,
+      "groupHeader" : null,
+      "subGroupHeader" : null,
+      "sortOrder" : 2,
+      "new" : false
+    } ],
+    "horizontalDeviceTypeCodes" : [ {
+      "uuid" : "CD48A569E3CA8334E05343E4A79E78D8",
+      "code" : "IVS1004",
+      "description" : {
+        "texts" : [ {
+          "language" : {
+            "isoCode" : "en",
+            "name" : "English"
+          },
+          "text" : "Devices manufactured utilising tissues or cells of human origin, or their derivatives",
+          "allLanguagesApplicable" : null
+        } ]
+      },
+      "horizontalDeviceType" : true,
+      "mdr" : false,
+      "groupHeader" : null,
+      "subGroupHeader" : null,
+      "sortOrder" : 4,
+      "new" : false
+    } ],
+    "name" : null,
+    "referenceCatalogueNumber" : null,
+    "riskClass" : null,
+    "deviceCharacteristics" : null,
+    "new" : false
+  } ],
+  "additionalStatusChangeReason" : null,
+  "applicationReference" : null,
+  "sppApplicable" : null,
+  "sppType" : null,
+  "versionState" : {
+    "code" : "refdata.eudamed-entity-version-status.registered"
+  },
+  "latestVersion" : true,
+  "versionNumber" : 2,
+  "discardedDate" : null,
+  "animalTissues" : null,
+  "humanTissues" : null,
+  "sterile" : null,
+  "inVitroDiagnostics" : null,
+  "intendedMedicalPurpose" : null,
+  "cecps" : null,
+  "cecpApplicable" : null,
+  "sscps" : [ {
+    "uuid" : "62acf5be-c09c-4547-9344-d35c86a519ee",
+    "ulid" : "01HJTSBNZAHMR3QQ4V2PE34H27",
+    "referenceNumber" : "05.PER.0248",
+    "revisionNumber" : "004",
+    "issueDate" : "2023-10-16",
+    "validated" : true,
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "latestVersion" : true,
+    "versionNumber" : 1,
+    "certificateUuid" : null,
+    "basicUdis" : [ {
+      "uuid" : "47fdb8ee-1381-4e56-842d-bdd1ecfdf818",
+      "ulid" : "01HE7RJMKNJK58R9FTZV9S3FDW",
+      "udiDiData" : null,
+      "manufacturer" : {
+        "uuid" : "c34d05ff-6b14-477a-bffe-39d72b04d1ce",
+        "ulid" : "01ERHBJNCRVH1CH36CEMQCZP8A",
+        "versionNumber" : 5,
+        "versionState" : {
+          "code" : "refdata.eudamed-entity-version-status.registered"
+        },
+        "latestVersion" : true,
+        "lastUpdateDate" : "2024-10-11T17:36:47.719",
+        "name" : "IMMUCOR Medizinische Diagnostik GmbH",
+        "names" : {
+          "texts" : [ {
+            "language" : {
+              "isoCode" : "de",
+              "name" : "German"
+            },
+            "text" : "IMMUCOR Medizinische Diagnostik GmbH",
+            "allLanguagesApplicable" : null
+          } ]
+        },
+        "abbreviatedNames" : null,
+        "actorType" : {
+          "code" : "refdata.actor-type.manufacturer",
+          "srnCode" : "MF",
+          "category" : "ECONOMIC_ENTITY"
+        },
+        "status" : {
+          "code" : "refdata.actor-status.active"
+        },
+        "statusFromDate" : null,
+        "countryIso2Code" : "DE",
+        "countryName" : "Germany",
+        "countryType" : "EU_MEMBER_STATE",
+        "geographicalAddress" : "32 Robert-Bosch-Straße 63303 Dreieich",
+        "electronicMail" : "germany@immucor.com",
+        "telephone" : "+49 6103 8056 0",
+        "srn" : "DE-MF-000006494",
+        "actorValidated" : null
+      },
+      "authorisedRepresentative" : null,
+      "active" : null,
+      "administeringMedicine" : null,
+      "animalTissues" : true,
+      "nbDecision" : {
+        "uuid" : null,
+        "reason" : null,
+        "actor" : null,
+        "date" : null,
+        "new" : true
+      },
+      "basicUdi" : {
+        "uuid" : "2e80e503-86ce-48d9-8c98-117a9e528d29",
+        "code" : "88823405W0103030202D28JP",
+        "issuingAgency" : {
+          "code" : "refdata.issuing-agency.gs1"
+        },
+        "type" : "BASIC_UDI",
+        "new" : false
+      },
+      "companionDiagnostics" : false,
+      "reagent" : true,
+      "instrument" : false,
+      "professionalTesting" : true,
+      "kit" : false,
+      "device" : null,
+      "multiComponent" : null,
+      "deviceCriterion" : "STANDARD",
+      "basicUdiType" : null,
+      "deviceModel" : null,
+      "deviceModelApplicable" : false,
+      "deviceName" : "immuClone (2) Anti-c IgM",
+      "humanTissues" : false,
+      "humanProduct" : null,
+      "medicinalProduct" : null,
+      "implantable" : null,
+      "sutures" : null,
+      "legislation" : {
+        "code" : "refdata.applicable-legislation.ivdr",
+        "legacyDirective" : false
+      },
+      "measuringFunction" : null,
+      "microbialSubstances" : false,
+      "nearPatientTesting" : false,
+      "reusable" : null,
+      "riskClass" : {
+        "code" : "refdata.risk-class.class-d"
+      },
+      "selfTesting" : false,
+      "specialDeviceType" : null,
+      "specialDeviceTypeApplicable" : false,
+      "medicalPurpose" : null,
+      "typeExaminationApplicable" : false,
+      "deviceCertificateInfoList" : null,
+      "deviceCertificateInfoListForDisplay" : null,
+      "clinicalInvestigationApplicable" : false,
+      "clinicalInvestigationLinks" : null,
+      "versionDate" : "2023-11-02T11:35:34.654",
+      "versionState" : {
+        "code" : "refdata.eudamed-entity-version-status.registered"
+      },
+      "latestVersion" : true,
+      "versionNumber" : 1,
+      "legacyDeviceUdiDiApplicable" : null,
+      "discardedDate" : null,
+      "linkedSscp" : null,
+      "containerType" : "UDI_DI",
+      "new" : false
+    } ],
+    "sscpDocuments" : [ {
+      "document" : {
+        "uuid" : "5fde78a5-86d0-4fa5-b068-a62efc266bdf",
+        "originalFileName" : "05.PER.0248_ Rev. 004 - SSP - immuClone (2) Anti-c (small) IgM and Galileo.pdf",
+        "fileContentType" : "application/pdf",
+        "fileSize" : 441797,
+        "tempFileName" : null,
+        "type" : {
+          "code" : "refdata.document-type.sscp",
+          "accessType" : "PUBLIC"
+        },
+        "languages" : [ {
+          "isoCode" : "en",
+          "name" : "English"
+        } ],
+        "referenceDocId" : null,
+        "primaryModuleName" : "CRF",
+        "indexed" : false,
+        "virusCheck" : 0,
+        "new" : false
+      },
+      "master" : true,
+      "dateReceivedFromMf" : null,
+      "discarded" : false,
+      "uploadDate" : "2023-12-29"
+    } ],
+    "notifiedBody" : {
+      "uuid" : "9a15d97d-c8d5-4e7a-ad2a-10470cf3c8c9",
+      "ulid" : "01EX1WAY34V3XSWY26WPG3PXDR",
+      "versionNumber" : 30,
+      "versionState" : {
+        "code" : "refdata.eudamed-entity-version-status.registered"
+      },
+      "latestVersion" : true,
+      "lastUpdateDate" : "2021-10-02T00:15:30.471",
+      "name" : "TÜV Rheinland LGA Products GmbH",
+      "names" : {
+        "texts" : [ {
+          "language" : null,
+          "text" : "TÜV Rheinland LGA Products GmbH",
+          "allLanguagesApplicable" : true
+        } ]
+      },
+      "abbreviatedNames" : null,
+      "actorType" : {
+        "code" : "refdata.actor-type.notified-body",
+        "srnCode" : "NB",
+        "category" : "SUPERVISING_ENTITY"
+      },
+      "status" : {
+        "code" : "refdata.actor-status.active"
+      },
+      "statusFromDate" : null,
+      "countryIso2Code" : "DE",
+      "countryName" : "Germany",
+      "countryType" : "EU_MEMBER_STATE",
+      "geographicalAddress" : "Tillystraße 2 90431 Nürnberg 90431 Nürnberg",
+      "electronicMail" : "service@de.tuv.com",
+      "telephone" : "+49 (0) 9116555225",
+      "srn" : "0197",
+      "actorValidated" : null
+    },
+    "discardedDate" : null,
+    "sscpUpload" : {
+      "code" : "refdata.sscp-upload.sscp-upload-cert"
+    },
+    "inactive" : false,
+    "inactiveStatusDate" : null,
+    "linkedToQualityOnly" : false,
+    "deviceCertificateLinks" : null,
+    "associatedDraftCertificateNumbers" : null,
+    "basicUdiCodesAssociated" : null,
+    "versionDate" : "2023-12-29T13:39:05.452",
+    "new" : false
+  } ],
+  "decisionComments" : null,
+  "otherDecisionReasons" : {
+    "texts" : [ {
+      "language" : {
+        "isoCode" : "en",
+        "name" : "English"
+      },
+      "text" : "correction of certificate number on page 2",
+      "allLanguagesApplicable" : null
+    } ]
+  },
+  "decisionDocuments" : null,
+  "precedingCertificates" : [ {
+    "uuid" : "c64eecf9-2aad-4249-ab06-85ee319e08f4",
+    "ulid" : "01HCF95GRE048WZNT1FEGZN1DQ",
+    "certificateNumber" : "IX 1191616-6",
+    "revisionNumber" : "0",
+    "versionNumber" : 1,
+    "issueDate" : "2023-09-28",
+    "startingValidityDate" : "2023-09-28",
+    "expiryDate" : "2028-09-27",
+    "decisionDate" : null,
+    "status" : {
+      "code" : "refdata.certificate-status.issued"
+    },
+    "applicableLegislation" : {
+      "code" : "refdata.applicable-legislation.ivdr",
+      "legacyDirective" : false
+    },
+    "type" : {
+      "code" : "refdata.certificate-ivdr-type.technical-documentation"
+    },
+    "initiator" : true,
+    "certificateId" : "0197IX 1191616-60",
+    "languages" : [ {
+      "isoCode" : "en",
+      "name" : "English"
+    } ],
+    "sppApplicable" : null,
+    "sppType" : null,
+    "sscpUuids" : [ "62acf5be-c09c-4547-9344-d35c86a519ee" ],
+    "sscpUlids" : [ "01HJTSBNZAHMR3QQ4V2PE34H27" ]
+  } ],
+  "mosOutsideEudamed" : null,
+  "acceptedDisclaimer" : null,
+  "ivdrMechanismOfScrutiny" : null,
+  "eligibleBasicUdisForSscp" : [ {
+    "uuid" : "47fdb8ee-1381-4e56-842d-bdd1ecfdf818",
+    "ulid" : "01HE7RJMKNJK58R9FTZV9S3FDW",
+    "udiDiData" : null,
+    "manufacturer" : {
+      "uuid" : "c34d05ff-6b14-477a-bffe-39d72b04d1ce",
+      "ulid" : "01ERHBJNCRVH1CH36CEMQCZP8A",
+      "versionNumber" : 5,
+      "versionState" : {
+        "code" : "refdata.eudamed-entity-version-status.registered"
+      },
+      "latestVersion" : true,
+      "lastUpdateDate" : "2024-10-11T17:36:47.719",
+      "name" : "IMMUCOR Medizinische Diagnostik GmbH",
+      "names" : {
+        "texts" : [ {
+          "language" : {
+            "isoCode" : "de",
+            "name" : "German"
+          },
+          "text" : "IMMUCOR Medizinische Diagnostik GmbH",
+          "allLanguagesApplicable" : null
+        } ]
+      },
+      "abbreviatedNames" : null,
+      "actorType" : {
+        "code" : "refdata.actor-type.manufacturer",
+        "srnCode" : "MF",
+        "category" : "ECONOMIC_ENTITY"
+      },
+      "status" : {
+        "code" : "refdata.actor-status.active"
+      },
+      "statusFromDate" : null,
+      "countryIso2Code" : "DE",
+      "countryName" : "Germany",
+      "countryType" : "EU_MEMBER_STATE",
+      "geographicalAddress" : "32 Robert-Bosch-Straße 63303 Dreieich",
+      "electronicMail" : "germany@immucor.com",
+      "telephone" : "+49 6103 8056 0",
+      "srn" : "DE-MF-000006494",
+      "actorValidated" : null
+    },
+    "authorisedRepresentative" : null,
+    "active" : null,
+    "administeringMedicine" : null,
+    "animalTissues" : true,
+    "nbDecision" : {
+      "uuid" : null,
+      "reason" : null,
+      "actor" : null,
+      "date" : null,
+      "new" : true
+    },
+    "basicUdi" : {
+      "uuid" : "2e80e503-86ce-48d9-8c98-117a9e528d29",
+      "code" : "88823405W0103030202D28JP",
+      "issuingAgency" : {
+        "code" : "refdata.issuing-agency.gs1"
+      },
+      "type" : "BASIC_UDI",
+      "new" : false
+    },
+    "companionDiagnostics" : false,
+    "reagent" : true,
+    "instrument" : false,
+    "professionalTesting" : true,
+    "kit" : false,
+    "device" : null,
+    "multiComponent" : null,
+    "deviceCriterion" : "STANDARD",
+    "basicUdiType" : null,
+    "deviceModel" : null,
+    "deviceModelApplicable" : false,
+    "deviceName" : "immuClone (2) Anti-c IgM",
+    "humanTissues" : false,
+    "humanProduct" : null,
+    "medicinalProduct" : null,
+    "implantable" : null,
+    "sutures" : null,
+    "legislation" : {
+      "code" : "refdata.applicable-legislation.ivdr",
+      "legacyDirective" : false
+    },
+    "measuringFunction" : null,
+    "microbialSubstances" : false,
+    "nearPatientTesting" : false,
+    "reusable" : null,
+    "riskClass" : {
+      "code" : "refdata.risk-class.class-d"
+    },
+    "selfTesting" : false,
+    "specialDeviceType" : null,
+    "specialDeviceTypeApplicable" : false,
+    "medicalPurpose" : null,
+    "typeExaminationApplicable" : false,
+    "deviceCertificateInfoList" : null,
+    "deviceCertificateInfoListForDisplay" : null,
+    "clinicalInvestigationApplicable" : false,
+    "clinicalInvestigationLinks" : null,
+    "versionDate" : "2023-11-02T11:35:34.654",
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "latestVersion" : true,
+    "versionNumber" : 1,
+    "legacyDeviceUdiDiApplicable" : null,
+    "discardedDate" : null,
+    "linkedSscp" : null,
+    "containerType" : "UDI_DI",
+    "new" : false
+  } ],
+  "discardAllowed" : false,
+  "cecpPublicDocuments" : null,
+  "eligibleCecps" : {
+    "cecps" : null,
+    "basicUdiUuidsNotFound" : null
+  },
+  "mechanismOfScrutinyEnabled" : false,
+  "sscpEnabled" : true,
+  "startingDecisionApplicabilityDate" : null,
+  "qmsMosType" : "OTHERS",
+  "versionDate" : "2024-04-24T10:02:44.771",
+  "new" : false
+}

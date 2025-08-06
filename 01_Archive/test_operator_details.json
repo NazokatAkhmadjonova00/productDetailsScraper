@@ -1,0 +1,155 @@
+{
+  "importers" : [ ],
+  "nonEuManufacturers" : null,
+  "actorDataPublicView" : {
+    "ulid" : "01F24107AM3CFSADGGXW6AQPPR",
+    "uuid" : "0b379538-f0bf-46ec-853d-1241941026cc",
+    "type" : {
+      "code" : "refdata.actor-type.manufacturer",
+      "srnCode" : "MF",
+      "category" : "ECONOMIC_ENTITY"
+    },
+    "actorStatus" : {
+      "code" : "refdata.actor-status.active"
+    },
+    "actorStatusFromDate" : null,
+    "country" : {
+      "name" : "United Arab Emirates",
+      "type" : "NON_EU",
+      "iso2Code" : "AE",
+      "nonEUMemberState" : true
+    },
+    "name" : {
+      "texts" : [ {
+        "language" : {
+          "isoCode" : "en",
+          "name" : "English"
+        },
+        "text" : "United Medical Industries Limited Co. L.L.C",
+        "allLanguagesApplicable" : null
+      } ]
+    },
+    "abbreviatedName" : {
+      "texts" : [ {
+        "language" : {
+          "isoCode" : "en",
+          "name" : "English"
+        },
+        "text" : "UNIMED",
+        "allLanguagesApplicable" : null
+      } ]
+    },
+    "europeanVatNumberApplicable" : true,
+    "europeanVatNumber" : "100289912600003",
+    "eudamedIdentifier" : "AE-MF-000004542",
+    "tradeRegister" : "707252",
+    "eori" : null,
+    "organizationIdentificationDocuments" : [ ],
+    "authorisedRepresentatives" : [ {
+      "nonEuManufacturerUuid" : "0b379538-f0bf-46ec-853d-1241941026cc",
+      "authorisedRepresentativeUuid" : "aa09f930-5024-425a-96dd-ff9e17626209",
+      "authorisedRepresentativeUlid" : "01ERQAP7FPMEE729NPHT6Y7GDS",
+      "name" : "Emergo Europe B.V.",
+      "srn" : "NL-AR-000000116",
+      "address" : "Westervoortsedijk , 60 6827 AT Arnhem",
+      "countryName" : "Netherlands",
+      "startDate" : "2020-02-20",
+      "endDate" : null,
+      "terminationDate" : null,
+      "email" : "lst.aus.euauthrep@ul.com",
+      "telephone" : "+31 70 345 8570",
+      "mandateStatus" : {
+        "code" : "refdata.mandate-status.registered"
+      },
+      "actorStatus" : {
+        "code" : "refdata.actor-status.active"
+      },
+      "actorStatusFromDate" : null,
+      "versionNumber" : 0,
+      "versionState" : null,
+      "latestVersion" : false,
+      "lastUpdateDate" : null,
+      "ulid" : null
+    } ],
+    "competentAuthorityResponsibility" : null,
+    "telephone" : "+97145646799",
+    "electronicMail" : "info@unimed.com.sa",
+    "website" : "www.unimed.co.ae",
+    "actorAddress" : {
+      "streetName" : "Dubai Industrial City",
+      "streetInfoApplicable" : true,
+      "buildingNumber" : "Plot No. 5310493",
+      "complement" : "Saih Shuaib 2",
+      "postbox" : "37803",
+      "gps" : null,
+      "cityName" : "Dubai",
+      "postalZone" : "37803",
+      "country" : {
+        "name" : "United Arab Emirates",
+        "type" : "NON_EU",
+        "iso2Code" : "AE",
+        "nonEUMemberState" : true
+      }
+    },
+    "validatorName" : "Ministerie van Volksgezondheid, Welzijn en Sport",
+    "validatorUuid" : "eaff8bbd-38d6-4ef4-9138-e8ed01f4c46c",
+    "validatorType" : {
+      "code" : "refdata.actor-type.competent-authority",
+      "srnCode" : "CA",
+      "category" : "SUPERVISING_ENTITY"
+    },
+    "validatorSrn" : "NL-CA-058",
+    "validatorAddress" : {
+      "streetName" : "P.O. Box",
+      "streetInfoApplicable" : true,
+      "buildingNumber" : "20350",
+      "complement" : null,
+      "postbox" : null,
+      "gps" : null,
+      "cityName" : "The Hague",
+      "postalZone" : "2500EJ",
+      "country" : {
+        "name" : "Netherlands",
+        "type" : "EU_MEMBER_STATE",
+        "iso2Code" : "NL",
+        "nonEUMemberState" : false
+      }
+    },
+    "validatorEmail" : "medische_hulpmiddelen@minvws.nl",
+    "validatorTelephone" : "+31 70 340 79 11",
+    "regulatoryComplianceResponsibles" : [ {
+      "firstName" : "Abdul",
+      "familyName" : "Raheem",
+      "electronicMail" : "araheem@unimed.com.sa",
+      "telephone" : "+966502516351",
+      "position" : "Compliance with Regulatory Requirements\nPost Market Surveillance\nMedical Device Vigilance\nClinical Evaluation\nRisk Management\nRegistration of Devices with competent authorities\nImplementation of Quality Management System",
+      "geographicalAddress" : {
+        "streetName" : "3rd Industrial City",
+        "streetInfoApplicable" : true,
+        "buildingNumber" : "215",
+        "complement" : "Riyadh",
+        "postbox" : "51871",
+        "gps" : null,
+        "cityName" : "Riyadh",
+        "postalZone" : "11553",
+        "country" : {
+          "name" : "Saudi Arabia",
+          "type" : "NON_EU",
+          "iso2Code" : "SA",
+          "nonEUMemberState" : true
+        }
+      }
+    } ],
+    "legislationLinks" : null,
+    "latestSubsidiary" : null,
+    "certificates" : null,
+    "latestVersion" : true,
+    "versionNumber" : 1,
+    "versionState" : {
+      "code" : "refdata.eudamed-entity-version-status.registered"
+    },
+    "lastUpdateDate" : "2021-05-18T16:41:14.506",
+    "accuracyData" : [ ],
+    "lastAccuracyDate" : null
+  }
+}

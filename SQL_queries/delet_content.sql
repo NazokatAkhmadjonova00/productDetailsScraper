@@ -1,0 +1,20 @@
+TRUNCATE TABLE
+    sscp_basic_udi,
+    certificate_sscp,
+    certificate_udi,
+    certificate_details,
+    certificates,
+    notified_bodies,
+    horizontal_codes,
+    device_type_codes,
+    market_distribution,
+    device_udi_di_details,
+    device_basic_udi_detail,
+    devices,
+    competent_authority,
+    person_responsible,
+    operator_contact,
+    operator_address,
+    operator_identification,
+    operators
+RESTART IDENTITY CASCADE;
