@@ -84,6 +84,7 @@ class DeviceImporter:
                 country,
                 details_url
             ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ON CONFLICT (uuid) DO NOTHING;
         """
 
         params = (

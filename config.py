@@ -12,7 +12,12 @@ DATA_PATHS = {
     "log_file": "./logs/import.log",
     "last_page_file": "./state/last_page.txt",
     "last_operator_page_file": "./state/last_operator_page.txt",
-    "last_certificate_page_file": "./state/last_certificate_page.txt"
+    "last_certificate_page_file": "./state/last_certificate_page.txt",
+    # Add separate files for each actor type
+    "last_operator_manufacturer_page_file": "./state/last_operator_manufacturer_page.txt",
+    "last_operator_authorizedrepresentative_page_file": "./state/last_operator_authorizedrepresentative_page.txt",
+    "last_operator_importer_page_file": "./state/last_operator_importer_page.txt",
+    "last_operator_distributor_page_file": "./state/last_operator_distributor_page.txt"
 }
 
 # Project description 
@@ -52,7 +57,7 @@ REQUEST_SETTINGS = {
             "iso2Code": "en"
         },
         "udiDi_detail_url": "https://ec.europa.eu/tools/eudamed/api/devices/udiDiData/{uuid}?customError=null&languageIso2Code=en",
-        "basic_udi_detail_url": "https://ec.europa.eu/tools/eudamed/api/devices/basicUdiData/udiDiData/{uuid}?customError=null&languageIso2Code=en",
+        "basic_udi_detail_url": "https://ec.europa.eu/tools/eudamed/api/devices/basicUdiData/{uuid}?customError=null&languageIso2Code=en",
         "actor_url": "https://ec.europa.eu/tools/eudamed/api/eos?srn={actor_id}&languageIso2Code=en"
     },
     "operators": {

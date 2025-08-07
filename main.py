@@ -48,43 +48,74 @@ def handle_interrupt(signum, frame):
 # Signal handler
 signal.signal(signal.SIGINT, handle_interrupt)
 
-def save_last_page(page, name):
+def save_last_page(page, name, actor_type=None):
     """Saves the last processed page number to a file.
+    For operators, can save by actor_type.
     """
-    if name == "devices":
-        with open(DATA_PATHS["last_page_file"], "w") as f:
-            f.write(str(page))
-    elif name == "operators":
-        with open(DATA_PATHS["last_operator_page_file"], "w") as f:
-            f.write(str(page))
-    elif name == "certificates":
-        with open(DATA_PATHS["last_certificate_page_file"], "w") as f:
-            f.write(str(page))
-
-def load_last_page(name):
     try:
         if name == "devices":
             path = DATA_PATHS["last_page_file"]
+        elif name == "operators" and actor_type:
+            # Use actor_type specific file
+            path = DATA_PATHS.get(f"last_operator_{actor_type.lower()}_page_file", DATA_PATHS["last_operator_page_file"])
         elif name == "operators":
             path = DATA_PATHS["last_operator_page_file"]
         elif name == "certificates":
             path = DATA_PATHS["last_certificate_page_file"]
         else:
+            logging.warning(f"Unknown name type: {name}")
+            return
+            
+        # Create directory if it doesn't exist
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        
+        with open(path, "w") as f:
+            f.write(str(page))
+            
+        if actor_type:
+            logging.info(f"Saved last page {page} for {name} - {actor_type}")
+        else:
+            logging.info(f"Saved last page {page} for {name}")
+            
+    except Exception as e:
+        logging.error(f"Error saving last page for {name} ({actor_type}): {e}")
+
+def load_last_page(name, actor_type=None):
+    """Loads the last processed page number from a file.
+    For operators, can load by actor_type.
+    """
+    try:
+        if name == "devices":
+            path = DATA_PATHS["last_page_file"]
+        elif name == "operators" and actor_type:
+            # Use actor_type specific file
+            path = DATA_PATHS.get(f"last_operator_{actor_type.lower()}_page_file", DATA_PATHS["last_operator_page_file"])
+        elif name == "operators":
+            path = DATA_PATHS["last_operator_page_file"]
+        elif name == "certificates":
+            path = DATA_PATHS["last_certificate_page_file"]
+        else:
+            logging.warning(f"Unknown name type: {name}")
             return 0
 
         if os.path.exists(path):
             with open(path, "r") as f:
                 content = f.read().strip()
                 if content:
-                    return int(content)
+                    page = int(content)
+                    if actor_type:
+                        logging.info(f"Resuming {name} - {actor_type} from page {page}")
+                    else:
+                        logging.info(f"Resuming {name} from page {page}")
+                    return page
                 else:
-                    logging.warning(f"{name}: Datei ist leer. Starte bei Seite 0.")
+                    logging.warning(f"{name} ({actor_type}): File is empty. Starting from page 0.")
                     return 0
         else:
-            logging.warning(f"{name}: Keine Datei gefunden. Starte bei Seite 0.")
+            logging.warning(f"{name} ({actor_type}): No file found. Starting from page 0.")
             return 0
     except Exception as e:
-        logging.error(f"Fehler beim Laden der letzten Seite ({name}): {e}")
+        logging.error(f"Error loading last page for {name} ({actor_type}): {e}")
         return 0
 
 def process_device_page(page, device_importer):
@@ -380,7 +411,7 @@ def fetch_operators_parallel(db, max_pages=1000, max_workers=5, resume_from=0):
                     if inserted > 0:
                         empty_pages = 0
                         last_success_page = page
-                        save_last_page(page, "operators")
+                        save_last_page(page, "operators", actor_type)
                     else:
                         empty_pages += 1
                         if empty_pages >= 50:
@@ -394,7 +425,7 @@ def fetch_operators_parallel(db, max_pages=1000, max_workers=5, resume_from=0):
         if stop_requested:
             logging.info("Interrupted by user. Saving last successful page...")
             if last_success_page is not None:
-                save_last_page(last_success_page, "operators")
+                save_last_page(last_success_page, "operators", actor_type)
                 
     logging.info(f"TOTAL INSERTED: {total_inserted} OPERATORS")
 
@@ -507,10 +538,10 @@ def operator_connector():
     db = DatabaseConnector()
     logging.info("Database connection established for operator function.")
 
-    #resume_from_operators = load_last_page("operators")
+    resume_from_operators = load_last_page("operators")
     max_pages = 5000
-    fetch_operators_parallel(db, max_pages=max_pages, max_workers=5, resume_from=0)
-    
+    fetch_operators_parallel(db, max_pages=max_pages, max_workers=5, resume_from=resume_from_operators)
+
     db.close()
 
 def device_connector():
@@ -519,11 +550,11 @@ def device_connector():
     logging.info("Database connection established for device function.")
 
     # first real run without resume
-    #resume_from_devices = load_last_page("devices")
+    resume_from_devices = load_last_page("devices")
     devices_max_pages = 70000
-    
-    fetch_devices_parallel(db, max_pages=devices_max_pages, max_workers=5, resume_from=0)
-    
+
+    fetch_devices_parallel(db, max_pages=devices_max_pages, max_workers=5, resume_from=resume_from_devices)
+
     db.close()
 
 def certificate_connector():
@@ -532,11 +563,11 @@ def certificate_connector():
     logging.info("Database connection established for certificate function.")
 
     # first real run without resume
-    #resume_from_certificates = load_last_page("certificates")
+    resume_from_certificates = load_last_page("certificates")
     certificate_max_pages = 5000
-    
-    fetch_certificates_parallel(db, max_pages=certificate_max_pages, max_workers=5, resume_from=0)
-    
+
+    fetch_certificates_parallel(db, max_pages=certificate_max_pages, max_workers=5, resume_from=resume_from_certificates)
+
     db.close()
 
 if __name__ == "__main__":
