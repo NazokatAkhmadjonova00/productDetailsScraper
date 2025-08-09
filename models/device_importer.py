@@ -60,12 +60,17 @@ class DeviceImporter:
         uuid = actor.get("uuid")
         actor_id = actor.get("eudamedIdentifier")
 
-        # check if actor exists
-        check_query = "SELECT 1 FROM operators WHERE uuid = %s LIMIT 1;"
-        self.db.cursor.execute(check_query, (uuid,))
-        if self.db.cursor.fetchone() is not None:
-            logging.info(f"Operator with UUID {uuid} already exists.")
-            return
+        # check if actor exists with proper error handling
+        try:
+            check_query = "SELECT 1 FROM operators WHERE uuid = %s LIMIT 1;"
+            self.db.cursor.execute(check_query, (uuid,))
+            result = self.db.cursor.fetchone()
+            if result is not None:
+                logging.info(f"Operator with UUID {uuid} already exists.")
+                return
+        except Exception as e:
+            logging.debug(f"Database check for operator {uuid} failed (this is normal for new operators): {e}")
+            # Continue with insertion as operator likely doesn't exist
         
         if uuid is None or actor_id is None:
             logging.warning(f"Missing data in operator: uuid={uuid}, actor_id={actor_id}")

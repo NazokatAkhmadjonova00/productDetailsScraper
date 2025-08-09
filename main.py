@@ -12,6 +12,8 @@ import psycopg2
 
 import requests
 import bs4 as BeautifulSoup
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 import logging
 
@@ -35,7 +37,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-logging.warning(f"Starting {PROJECT_DESC['project_name']} v{PROJECT_DESC['version']} by {PROJECT_DESC['author']}")
+logging.error(f"Starting {PROJECT_DESC['project_name']} v{PROJECT_DESC['version']} by {PROJECT_DESC['author']}")
 
 # Global interrupt flag
 stop_requested = False
@@ -47,6 +49,20 @@ def handle_interrupt(signum, frame):
 
 # Signal handler
 signal.signal(signal.SIGINT, handle_interrupt)
+
+# Add retry strategy
+retry_strategy = Retry(
+    total=3,
+    backoff_factor=1,
+    status_forcelist=[429, 500, 502, 503, 504]
+)
+
+# Create a session with retry adapter
+session = requests.Session()
+adapter = HTTPAdapter(max_retries=retry_strategy)
+session.mount("http://", adapter)
+session.mount("https://", adapter)
+session.headers.update(REQUEST_SETTINGS["headers"])
 
 def save_last_page(page, name, actor_type=None):
     """Saves the last processed page number to a file.
@@ -126,11 +142,10 @@ def process_device_page(page, device_importer):
     params["page"] = page
 
     try:
-        response = requests.get(
+        response = session.get(
             REQUEST_SETTINGS["device"]["base_url"],
             params=params,
-            timeout=10,
-            headers=REQUEST_SETTINGS["headers"]
+            timeout=5  # Reduced from 10 to 5 seconds
         )
 
         if response.status_code != 200:
@@ -153,7 +168,7 @@ def process_device_page(page, device_importer):
             url = REQUEST_SETTINGS["device"]["basic_udi_detail_url"].format(uuid=uuid)
             actor_id_url = REQUEST_SETTINGS["device"]["actor_url"].format(actor_id=actor_id)
             # get device actor information
-            response_actor = requests.get(actor_id_url, headers=REQUEST_SETTINGS["headers"], timeout=10)
+            response_actor = session.get(actor_id_url, timeout=4)  # Actor lookup - 4 seconds
             if response_actor.status_code == 200:
                 try:
                     content = response_actor.json().get("content", {})
@@ -198,12 +213,12 @@ def process_device_page(page, device_importer):
             udi_detail_url = REQUEST_SETTINGS["device"]["udiDi_detail_url"].format(uuid=uuid)
             basic_udi_detail_url = REQUEST_SETTINGS["device"]["basic_udi_detail_url"].format(uuid=uuid)
 
-            detail_response = requests.get(udi_detail_url, headers=REQUEST_SETTINGS["headers"], timeout=10)
-            basic_udi_response = requests.get(basic_udi_detail_url, headers=REQUEST_SETTINGS["headers"], timeout=10)
+            detail_response = session.get(udi_detail_url, timeout=5)  # Detail requests - 5 seconds
+            basic_udi_response = session.get(basic_udi_detail_url, timeout=5)
             if detail_response.status_code == 200 and basic_udi_response.status_code == 200:
                 basic_device_details = basic_udi_response.json()
                 device_details = detail_response.json()
-                device_importer.insert_device_details(basic_device_details, device_details, uuid)
+                device_importer.insert_device_details(basic_device_details, device_details)
                 logging.info(f"Inserted device details for {uuid}")
             else:
                 logging.warning(f"ERROR: No details for {uuid} (Status {detail_response.status_code})")
@@ -254,19 +269,19 @@ def fetch_devices_parallel(db, max_pages=100, max_workers=5, resume_from=0):
                     save_last_page(page, "devices")
                 else:
                     empty_pages += 1
-                    if empty_pages >= 50:
+                    if empty_pages >= 1000:
                         logging.info(f"Stopping fetch after {empty_pages} empty pages. Last success: page {last_success_page}")
                         break
 
             except Exception as e:
                 logging.error(f"ERROR - DEVICE PAGE {page}: {e}")
-            finally:
-                if stop_requested:
-                    logging.info("Interrupted by user. Saving last successful page...")
-                    if last_success_page is not None:
-                        save_last_page(last_success_page, "devices")
+                
+        if stop_requested:
+            logging.info("Interrupted by user. Saving last successful page...")
+            if last_success_page is not None:
+                save_last_page(last_success_page, "devices")
 
-                logging.info(f"TOTAL INSERTED: {total_inserted} DEVICES")
+    logging.info(f"TOTAL INSERTED: {total_inserted} DEVICES")
 
 def process_operators_page(page, operator_importer, actor_type):
     """
@@ -277,11 +292,10 @@ def process_operators_page(page, operator_importer, actor_type):
     params["page"] = page
 
     try:
-        response = requests.get(
+        response = session.get(
             REQUEST_SETTINGS["operators"]["base_url"],
             params=params,
-            timeout=10,
-            headers=REQUEST_SETTINGS["headers"]
+            timeout=5  # Operator list requests - 5 seconds
         )
 
         if response.status_code != 200:
@@ -332,10 +346,9 @@ def process_operators_page(page, operator_importer, actor_type):
             operator_importer.insert_operator(prepared)
 
             # Details fetch
-            detail_response = requests.get(
+            detail_response = session.get(
                 url,
-                headers=REQUEST_SETTINGS["headers"],
-                timeout=10
+                timeout=4  # Operator detail requests - 4 seconds
             )
             if detail_response.status_code == 200:
                 try:
@@ -380,22 +393,25 @@ def fetch_operators_parallel(db, max_pages=1000, max_workers=5, resume_from=0):
 
 
     for actor_type in actor_types:
-        logging.info(f"Processed actor_type: {actor_type}")
+        logging.info(f"Processing actor_type: {actor_type}")
+        
+        # Load resume page specific to this actor type
+        resume_from_actor = load_last_page("operators", actor_type)
         
         empty_pages = 0
-        last_success_page = 0
+        last_success_page = resume_from_actor
+        current_max_pages = max_pages
 
-        if resume_from >= max_pages:
-            logging.warning("Resume page is greater than or equal to max pages. Exiting.")
+        if resume_from_actor >= max_pages:
+            logging.warning(f"Resume page {resume_from_actor} is greater than or equal to max pages {max_pages} for {actor_type}. Adjusting max_pages.")
             # correction of max_pages to avoid infinite loop
-            max_pages = max_pages + resume_from
-            logging.info(f"Setting max_pages to {max_pages} to avoid infinite loop.")
-            
+            current_max_pages = max_pages + resume_from_actor
+            logging.info(f"Setting max_pages to {current_max_pages} for {actor_type} to avoid infinite loop.")
 
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = {
                 executor.submit(process_operators_page, page, operator_importer, actor_type): page
-                for page in range(resume_from, max_pages)
+                for page in range(resume_from_actor, current_max_pages)
             }
 
             for future in tqdm(as_completed(futures), total=len(futures), desc=f"{actor_type} Operator Pages Processed"):
@@ -405,7 +421,7 @@ def fetch_operators_parallel(db, max_pages=1000, max_workers=5, resume_from=0):
                 
                 try:
                     inserted = future.result()
-                    logging.info(f"PAGE {page}: {inserted} OPERATORS INSERTED")
+                    logging.info(f"PAGE {page} ({actor_type}): {inserted} OPERATORS INSERTED")
                     total_inserted += inserted
 
                     if inserted > 0:
@@ -438,11 +454,10 @@ def process_certificates_page(page, certificate_importer):
     
 
     try:
-        response = requests.get(
+        response = session.get(
             REQUEST_SETTINGS["certificates"]["base_url"],
             params=params,
-            timeout=10,
-            headers=REQUEST_SETTINGS["headers"]
+            timeout=5  # Certificate list requests - 5 seconds
         )
 
         if response.status_code != 200:
@@ -464,10 +479,9 @@ def process_certificates_page(page, certificate_importer):
             certificate_importer.insert_certificate(certificate)
 
             # Details fetch
-            detail_response = requests.get(
+            detail_response = session.get(
                 url,
-                headers=REQUEST_SETTINGS["headers"],
-                timeout=10
+                timeout=6  # Certificate detail requests - 6 seconds
             )
             if detail_response.status_code == 200:
                 certificate_details = detail_response.json()
@@ -526,21 +540,27 @@ def fetch_certificates_parallel(db, max_pages=1000, max_workers=5, resume_from=0
             except Exception as e:
                 logging.error(f"ERROR - CERTIFICATES PAGE {page}: {e}")
 
-            finally:
-                if stop_requested:
-                    logging.info("Interrupted by user. Saving last successful page...")
-                    if last_success_page is not None:
-                        save_last_page(last_success_page, "certificates")
-                logging.info(f"TOTAL INSERTED: {total_inserted} CERTIFICATES")
+        if stop_requested:
+            logging.info("Interrupted by user. Saving last successful page...")
+            if last_success_page is not None:
+                save_last_page(last_success_page, "certificates")
+                
+    logging.info(f"TOTAL INSERTED: {total_inserted} CERTIFICATES")
 
 def operator_connector():
     """connect operator with DB for parallel processing"""
     db = DatabaseConnector()
     logging.info("Database connection established for operator function.")
 
-    resume_from_operators = load_last_page("operators")
+    # Show resume status for each actor type
+    actor_types = REQUEST_SETTINGS["operators"]["actor_types"]
+    logging.info("Resume status for each actor type:")
+    for actor_type in actor_types:
+        resume_page = load_last_page("operators", actor_type)
+        logging.info(f"  {actor_type}: Resume from page {resume_page}")
+
     max_pages = 5000
-    fetch_operators_parallel(db, max_pages=max_pages, max_workers=5, resume_from=resume_from_operators)
+    fetch_operators_parallel(db, max_pages=max_pages, max_workers=8, resume_from=0)
 
     db.close()
 
@@ -553,7 +573,7 @@ def device_connector():
     resume_from_devices = load_last_page("devices")
     devices_max_pages = 70000
 
-    fetch_devices_parallel(db, max_pages=devices_max_pages, max_workers=5, resume_from=resume_from_devices)
+    fetch_devices_parallel(db, max_pages=devices_max_pages, max_workers=10, resume_from=resume_from_devices)
 
     db.close()
 
@@ -566,7 +586,7 @@ def certificate_connector():
     resume_from_certificates = load_last_page("certificates")
     certificate_max_pages = 5000
 
-    fetch_certificates_parallel(db, max_pages=certificate_max_pages, max_workers=5, resume_from=resume_from_certificates)
+    fetch_certificates_parallel(db, max_pages=certificate_max_pages, max_workers=8, resume_from=resume_from_certificates)
 
     db.close()
 
